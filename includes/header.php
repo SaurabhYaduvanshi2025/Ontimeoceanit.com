@@ -28,7 +28,7 @@
                                     <a href="about-us.php">About</a>
                                  </li>  
                                  <li>
-                                    <a href="services.php">Services</a>
+                                    <a href="service.php">Services</a>
                                     <!-- <ul class="submenu">
                                        <li><a href="services.php">Services</a></li>
                                        <li><a href="service-details.php">Service Details</a></li>
