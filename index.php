@@ -108,389 +108,23 @@
    <!-- Offcanvas area start -->
 
    <!-- Header area start -->
-   <header>
-      <div id="header-sticky" class="header-area header-style-two">
-         <div class="large-container">
-            <div class="mega-menu-wrapper">
-               <div class="header-main">
-                  <div class="header-left">
-                     <div class="header-logo">
-                        <a href="index.html">
-                           <img src="assets/imgs/logo/logo-white.svg" alt="header logo">
-                        </a>
-                     </div>                     
-                  </div>                  
-                  <div class="header-right d-flex justify-content-end">
-                     <div class="mean__menu-wrapper d-none d-lg-block">
-                        <div class="main-menu">
-                           <nav id="mobile-menu">
-                              <ul>
-                                 <li class="has-dropdown active">
-                                    <a href="index.html">Home</a>
-                                    <ul class="submenu">
-                                       <li><a href="index.html">Home One</a></li>
-                                       <li><a href="index-2.html">Home Two</a></li>
-                                       <li><a href="index-3.html">Home Three</a></li>
-                                       <li><a href="dark-home.html">Home Dark</a></li>
-                                    </ul>
-                                 </li>  
-                                 <li>
-                                    <a href="about.html">About</a>
-                                 </li>  
-                                 <li>
-                                    <a href="services.html">Services</a>
-                                    <ul class="submenu">
-                                       <li><a href="services.html">Services</a></li>
-                                       <li><a href="service-details.html">Service Details</a></li>
-                                    </ul>
-                                 </li>                           
-                                 <li class="has-dropdown">
-                                    <a href="blog-grid.html">Pages</a>
-                                    <ul class="submenu">
-                                       <li class="has-dropdown"><a href="projects.html">Projects</a>
-                                          <ul class="submenu">
-                                             <li><a href="projects.html">Projects</a></li>
-                                             <li><a href="project-details.html">Projects Details</a></li>
-                                          </ul>
-                                       </li>
-                                       <li><a href="team.html">Team</a></li>
-                                       <li><a href="team-details.html">Team Details</a></li>
-                                       <li><a href="faq.html">Faq's</a></li>
-                                       <li><a href="error.html">Error Page</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="has-dropdown">
-                                    <a href="blog-grid.html">Blog</a>
-                                    <ul class="submenu">
-                                       <li><a href="blog-standard.html">Blog Default</a></li>
-                                       <li><a href="blog-grid.html">Blog Grid</a></li>
-                                       <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                 </li>
-                                 <li>
-                                    <a href="contact.html">Contact</a>
-                                 </li>
-                                
-                              </ul>
-                           </nav>
-                           <!-- for wp -->
-                           <div class="header__hamburger ml-50 d-none">
-                              <button type="button" class="hamburger-btn offcanvas-open-btn">
-                                 <span>01</span>
-                                 <span>01</span>
-                                 <span>01</span>
-                              </button>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="search-toggle-open header-search my-auto">
-                        <div class="search-icon">
-                           <i class="icon-search"></i>
-                        </div>
-                     </div>
-                     <div class="header-shopping-cart my-auto">
-                        <div class="cart-icon">
-                           <a href="#"><i class="icon-shopping-cart"></i></a>
-                        </div>
-                     </div>
-                     <div class="header-action d-none d-xl-inline-flex gap-5">
-                        <div class="header-link">
-                           <a class="primary-btn-1 btn-hover" href="contact.html">
-                              GET A QUOTE &nbsp; | <i class="icon-right-arrow"></i>
-                              <span style="top: 147.172px; left: 108.5px;"></span>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="header-action">
-                        <div class="header-link-1">
-                          <div class="icon">
-                           <i class="fal fa-phone-volume"></i>
-                          </div>
-                          <div class="content">
-                           <span>Call Us Now</span>
-                              <h6><a href="tel:2085550112">+208-555-0112</a></h6>
-                          </div>
-                        </div>
-                     </div>
-                     <div class="header__hamburger d-xl-none my-auto">
-                        <div class="sidebar__toggle">
-                           <a class="bar-icon" href="javascript:void(0)">
-                              <i class="fa-light fa-bars-sort"></i>
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </header>
+   <?php include 'includes/header.php'; ?>
    <!-- Header area end --> 
 
 
  <main>
    
  <!-- Banner area start --> 
-<section class="banner-section-2 p-relative fix">
-   <div class="swiper banner-active">
-      <div class="swiper-wrapper">
-         <!-- block -->
-         <div class="swiper-slide"> 
-            <div class="banner-main-2" data-background="assets/imgs/banner/banner-3.jpg">
-               <div class="large-container">               
-                  <div class="banner-area-2 p-relative z-3 wow img-custom-anim-left animated" data-wow-delay="1000ms">
-                     <span class="p-relative banner-sub-title">Best it SOULTION Provider</span>
-                     <h1 class="banner-title">Excellent It Services
-                        for Your Success</h1>
-                     <p class="banner-text">We denounce with righteous indignation and dislike men who are so<br> beguiled and demoralized by the charms of pleasure.</p>
-                     <div class="banner-btn-area-2">
-                        <a class="primary-btn-1 btn-hover" href="services.html">
-                           VIEW SERVICES &nbsp; | <i class="icon-right-arrow"></i>
-                           <span style="top: 147.172px; left: 108.5px;"></span>
-                        </a>
-                        <div class="round-image-area">
-                           <div class="image-1">
-                              <img src="assets/imgs/banner/clients-group.png" alt="">
-                           </div>
-                        </div>
-                        <h6>satisfied clients</h6>
-                     </div>                    
-                  </div>   
-                  <div class="socials-area">
-                     <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                     </ul>
-                     <span>FOLLOW US</span>
-                  </div>     
-               </div>
-            </div>
-            <div class="shape-area-2">
-               <div class="shape-1" data-background="assets/imgs/shapes/shape-18.png"></div>
-               <div class="shape-2" data-background="assets/imgs/shapes/shape-19.png"></div>
-               <div class="shape-3" data-background="assets/imgs/shapes/shape-20.png"></div>
-               <div class="shape-4" data-background="assets/imgs/shapes/shape-21.png"></div>
-               <div class="shape-5" data-background="assets/imgs/shapes/shape-22.png"></div>
-               <div class="shape-6" data-background="assets/imgs/shapes/shape-23.png"></div>
-            </div>
-         </div>
-         <!-- block -->
-         <div class="swiper-slide"> 
-            <div class="banner-main-2" data-background="assets/imgs/banner/banner-3.jpg">
-               <div class="large-container">               
-                  <div class="banner-area-2 p-relative z-3 wow img-custom-anim-left animated" data-wow-delay="3000ms">
-                     <span class="p-relative banner-sub-title">Best it SOULTION Provider</span>
-                     <h1 class="banner-title">Excellent It Services
-                        for Your Success</h1>
-                     <p class="banner-text">We denounce with righteous indignation and dislike men who are so<br> beguiled and demoralized by the charms of pleasure.</p>
-                     <div class="banner-btn-area-2">
-                        <a class="primary-btn-1 btn-hover" href="services.html">
-                           VIEW SERVICES &nbsp; | <i class="icon-right-arrow"></i>
-                           <span style="top: 147.172px; left: 108.5px;"></span>
-                        </a>
-                        <div class="round-image-area">
-                           <div class="image-1">
-                              <img src="assets/imgs/banner/clients-group.png" alt="">
-                           </div>
-                        </div>
-                        <h6>satisfied clients</h6>
-                     </div>                    
-                  </div>   
-                  <div class="socials-area">
-                     <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                     </ul>
-                     <span>FOLLOW US</span>
-                  </div>     
-               </div>
-            </div>
-            <div class="shape-area-2">
-               <div class="shape-1" data-background="assets/imgs/shapes/shape-18.png"></div>
-               <div class="shape-2" data-background="assets/imgs/shapes/shape-19.png"></div>
-               <div class="shape-3" data-background="assets/imgs/shapes/shape-20.png"></div>
-               <div class="shape-4" data-background="assets/imgs/shapes/shape-21.png"></div>
-               <div class="shape-5" data-background="assets/imgs/shapes/shape-22.png"></div>
-               <div class="shape-6" data-background="assets/imgs/shapes/shape-23.png"></div>
-            </div>
-         </div>
-         <!-- block -->
-         <div class="swiper-slide"> 
-            <div class="banner-main-2" data-background="assets/imgs/banner/banner-3.jpg">
-               <div class="large-container">               
-                  <div class="banner-area-2 p-relative z-3 wow img-custom-anim-left animated" data-wow-delay="3000ms">
-                     <span class="p-relative banner-sub-title">Best it SOULTION Provider</span>
-                     <h1 class="banner-title">Excellent It Services
-                        for Your Success</h1>
-                     <p class="banner-text">We denounce with righteous indignation and dislike men who are so<br> beguiled and demoralized by the charms of pleasure.</p>
-                     <div class="banner-btn-area-2">
-                        <a class="primary-btn-1 btn-hover" href="services.html">
-                           VIEW SERVICES &nbsp; | <i class="icon-right-arrow"></i>
-                           <span style="top: 147.172px; left: 108.5px;"></span>
-                        </a>
-                        <div class="round-image-area">
-                           <div class="image-1">
-                              <img src="assets/imgs/banner/clients-group.png" alt="">
-                           </div>
-                        </div>
-                        <h6>satisfied clients</h6>
-                     </div>                    
-                  </div>   
-                  <div class="socials-area">
-                     <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                     </ul>
-                     <span>FOLLOW US</span>
-                  </div>     
-               </div>
-            </div>
-            <div class="shape-area-2">
-               <div class="shape-1" data-background="assets/imgs/shapes/shape-18.png"></div>
-               <div class="shape-2" data-background="assets/imgs/shapes/shape-19.png"></div>
-               <div class="shape-3" data-background="assets/imgs/shapes/shape-20.png"></div>
-               <div class="shape-4" data-background="assets/imgs/shapes/shape-21.png"></div>
-               <div class="shape-5" data-background="assets/imgs/shapes/shape-22.png"></div>
-               <div class="shape-6" data-background="assets/imgs/shapes/shape-23.png"></div>
-            </div>
-         </div>
-      </div>
-   </div>
-    <!-- If we need pagination -->
-    <div class="banner-dot-inner">
-      <div class="banner-dot"></div>
-   </div>
-</section>
+    <?php include 'includes/banner.php'; ?>
+
  <!-- Banner area end --> 
 
  <!-- Features area start --> 
- <section class="features-section pt-80 pb-80 bg-color-1 p-relative">
-   <div class="bg-shape-1" data-background="assets/imgs/shapes/shape-27.png"></div>
-   <div class="bg-shape-2" data-background="assets/imgs/shapes/shape-28.png"></div>
-   <div class="small-container">
-      <div class="row g-4">
-         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
-            <div class="features-box-area p-relative wow fadeInLeft" data-wow-delay="500ms">
-               <div class="shape-2" data-background="assets/imgs/shapes/shape-25.png"></div>
-               <div class="shape-3" data-background="assets/imgs/shapes/shape-26.png"></div>
-               <div class="icon-box">
-                 <img src="assets/imgs/service/service-icon1.png" alt="icon">
-               </div>
-               <h5 class="mt-20 mb-10"><a href="services.html">Cyber Security</a></h5>
-               <p>
-                  Pellentesque nec the condimentum nec lorem nulla augue est ultricies ac iaculis ut euismod quis sapien.
-               </p>
-            </div>
-         </div>
-         <!-- block -->
-         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
-            <div class="features-box-area p-relative">
-               <div class="shape-2" data-background="assets/imgs/shapes/shape-25.png"></div>
-               <div class="shape-3" data-background="assets/imgs/shapes/shape-26.png"></div>
-               <div class="icon-box">
-                  <img src="assets/imgs/service/service-icon2.png" alt="icon">
-               </div>
-               <h5 class="mt-20 mb-10"><a href="services.html">IT Management</a></h5>
-               <p>
-                  Pellentesque nec the condimentum nec lorem nulla augue est ultricies ac iaculis ut euismod quis sapien.
-               </p>
-            </div>
-         </div>
-         <!-- block -->
-         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
-            <div class="features-box-area p-relative wow fadeInRight" data-wow-delay="500ms">
-               <div class="shape-2" data-background="assets/imgs/shapes/shape-25.png"></div>
-               <div class="shape-3" data-background="assets/imgs/shapes/shape-26.png"></div>
-               <div class="icon-box">
-                  <img src="assets/imgs/service/service-icon3.png" alt="icon">
-               </div>
-               <h5 class="mt-20 mb-10"><a href="services.html">Web Development</a></h5>
-               <p>
-                  Pellentesque nec the condimentum nec lorem nulla augue est ultricies ac iaculis ut euismod quis sapien.
-               </p>
-            </div>
-         </div>
-          <!-- block -->
-      </div>
-   </div>
- </section>
+  <?php include 'includes/features.php'; ?>
  <!-- Features area end --> 
 
  <!-- about two area start --> 
- <section class="about-2-section p-relative fix section-space">
-   <div class="bg-shape-1" data-background="assets/imgs/shapes/shape-30.png"></div>
-   <div class="bg-shape-2" data-background="assets/imgs/shapes/shape-31.png"></div>
-   <div class="small-container">
-      <div class="row">
-         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
-            <div class="about-2-image-area p-relative wow fadeInLeft" data-wow-delay="500ms">
-               <figure class="main-image m-img">
-                  <img src="assets/imgs/about/about-3.jpg" alt="">
-               </figure>
-               <div class="small-image">
-                  <img src="assets/imgs/about/about-4.jpg" alt="">
-               </div>
-               <div class="icon-box">
-                  <div class="icon">
-                     <i class="icon-prize-1"></i>
-                  </div>
-                  <div class="content">
-                     <h3 class="mb-10"><span class="counter">10</span>+</h3>
-                     <p>World Best Business Award Got</p>
-                  </div>
-               </div>
-               <div class="shape-1" data-background="assets/imgs/shapes/shape-29.png"></div>
-            </div>
-         </div>
-         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
-            <div class="about-2-content-area pl-50">
-               <div class="title-box mb-35 wow fadeInRight" data-wow-delay=".5s">
-                  <span class="section-sub-title">About Us</span>
-                  <h3 class="section-title mt-10">We Strive To Offer Intelligent Business Solutions</h3>
-               </div>
-               <p class="mb-35">It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.</p>
-               <div class="row mb-45">
-                  <div class="col-lg-6">
-                     <ul class="list-area">
-                        <li class="mb-10">Technology Consultancy</li>
-                        <li class="mb-10">We Provide best services</li>
-                        <li class="mb-10">Maintenance And Support</li>
-                     </ul>
-                  </div>
-                  <div class="col-lg-6">
-                     <ul class="list-area">
-                        <li class="mb-10">300+ Successful Projects done</li>
-                        <li class="mb-10">Professional Engineers Provide</li>
-                        <li class="mb-10">Requirements Gathering</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="about-2-btn-area">
-                  <a class="primary-btn-1 btn-hover" href="about.html">
-                     about us &nbsp; | <i class="icon-right-arrow"></i>
-                     <span style="top: 147.172px; left: 108.5px;"></span>
-                  </a>
-                  <div class="call-us">
-                     <div class="icon-1">
-                        <i class="fal fa-phone-volume"></i>
-                     </div>
-                     <div class="content p-relative">
-                        <span>Call Us Now</span>
-                           <h5><a href="tel:2085550112">+208-555-0112</a></h5>
-                       </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
- </section>
+ <?php include  'includes/about.php'; ?>
  <!-- about two area end --> 
 
  <!-- Service tab area start --> 
@@ -504,7 +138,7 @@
             <span class="section-sub-title">SERVICES WE’RE OFFERING</span>
             <h3 class="section-title mt-10 text-white p-relative">Exclusive IT Services</h3>
          </div>
-         <a class="primary-btn-4 btn-hover mt-20" href="services.html">
+         <a class="primary-btn-4 btn-hover mt-20" href="services.php">
             all services &nbsp; | <i class="icon-right-arrow"></i>
             <span style="top: 147.172px; left: 108.5px;"></span>
          </a>
@@ -574,7 +208,7 @@
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.html">
+                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>
@@ -596,7 +230,7 @@
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.html">
+                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>
@@ -618,7 +252,7 @@
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.html">
+                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>
@@ -640,7 +274,7 @@
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.html">
+                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>
