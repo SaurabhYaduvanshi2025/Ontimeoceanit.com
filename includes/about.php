@@ -47,7 +47,7 @@
                   </div>
                </div>
                <div class="about-2-btn-area">
-                  <a class="primary-btn-1 btn-hover" href="about.php">
+                  <a class="primary-btn-1 btn-hover" href="about-us.php">
                      about us &nbsp; | <i class="icon-right-arrow"></i>
                      <span style="top: 147.172px; left: 108.5px;"></span>
                   </a>

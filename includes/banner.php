@@ -7,11 +7,11 @@
                <div class="large-container">               
                   <div class="banner-area-2 p-relative z-3 wow img-custom-anim-left animated" data-wow-delay="1000ms">
                      <span class="p-relative banner-sub-title">Best it SOULTION Provider</span>
-                     <h1 class="banner-title">Excellent It Services
+                     <h1 class="banner-title">Excellent IT Services
                         for Your Success</h1>
                      <p class="banner-text">We denounce with righteous indignation and dislike men who are so<br> beguiled and demoralized by the charms of pleasure.</p>
                      <div class="banner-btn-area-2">
-                        <a class="primary-btn-1 btn-hover" href="services.php">
+                        <a class="primary-btn-1 btn-hover" href="service.php">
                            VIEW SERVICES &nbsp; | <i class="icon-right-arrow"></i>
                            <span style="top: 147.172px; left: 108.5px;"></span>
                         </a>

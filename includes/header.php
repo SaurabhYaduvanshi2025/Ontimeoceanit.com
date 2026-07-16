@@ -6,7 +6,7 @@
                   <div class="header-left">
                      <div class="header-logo">
                         <a href="index.php">
-                           <img src="assets/imgs/logo/logo-white.svg" alt="header logo">
+                           <img src="assets/imgs/logo/itweb.png" alt="header logo">
                         </a>
                      </div>                     
                   </div>                  
@@ -35,7 +35,7 @@
                                     </ul> -->
                                  </li>                           
                                  <li class="has-dropdown">
-                                    <a href="blog-grid.php">Pages</a>
+                                    <a href="blog-grid.php">Blogs</a>
                                     <!-- <ul class="submenu">
                                        <li class="has-dropdown"><a href="projects.php">Projects</a>
                                           <ul class="submenu">
@@ -49,14 +49,14 @@
                                        <li><a href="error.php">Error Page</a></li>
                                     </ul> -->
                                  </li>
-                                 <li class="has-dropdown">
+                                 <!-- <li class="has-dropdown">
                                     <a href="blog-details.php">Blog</a>
-                                    <!-- <ul class="submenu">
+                                    <ul class="submenu">
                                        <li><a href="blog-standard.php">Blog Default</a></li>
                                        <li><a href="blog-grid.php">Blog Grid</a></li>
                                        <li><a href="blog-details.php">Blog Details</a></li>
-                                    </ul> -->
-                                 </li>
+                                    </ul>
+                                 </li> -->
                                  <li>
                                     <a href="contact.php">Contact</a>
                                  </li>

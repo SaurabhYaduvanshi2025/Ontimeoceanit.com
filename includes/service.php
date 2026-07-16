@@ -8,7 +8,7 @@
             <span class="section-sub-title">SERVICES WE’RE OFFERING</span>
             <h3 class="section-title mt-10 text-white p-relative">Exclusive IT Services</h3>
          </div>
-         <a class="primary-btn-4 btn-hover mt-20" href="services.php">
+         <a class="primary-btn-4 btn-hover mt-20" href="service.php">
             all services &nbsp; | <i class="icon-right-arrow"></i>
             <span style="top: 147.172px; left: 108.5px;"></span>
          </a>
@@ -144,7 +144,7 @@
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
+                           <a class="primary-btn-1 btn-hover mt-20" href="service.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>

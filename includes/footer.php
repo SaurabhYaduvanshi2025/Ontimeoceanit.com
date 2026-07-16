@@ -48,7 +48,7 @@
                         </ul>
                      </div>
                   </div>
-                  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                  <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                      <div class="footer-widget-4 pr-30">
                         <h4 class="mb-20 footer-title mb-30">Our Gallery</h4>
                         <div class="footer-gallery p-relative">
@@ -66,7 +66,7 @@
                            </a>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </div>

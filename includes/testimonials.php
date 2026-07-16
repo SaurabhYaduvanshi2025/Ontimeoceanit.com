@@ -80,7 +80,7 @@
                               <i class="icon-comma-double"></i>
                            </div>
                            <div class="author-info">
-                              <h5>Kathryn Murphy</h5>
+                              <h5>Nitin Singh</h5>
                               <span>Engineering</span>
                               <ul class="rating-list">
                                  <li><i class="fa fa-star"></i></li>
@@ -105,7 +105,7 @@
                               <i class="icon-comma-double"></i>
                            </div>
                            <div class="author-info">
-                              <h5>Kathryn Murphy</h5>
+                              <h5>Priya Singh</h5>
                               <span>Engineering</span>
                               <ul class="rating-list">
                                  <li><i class="fa fa-star"></i></li>
