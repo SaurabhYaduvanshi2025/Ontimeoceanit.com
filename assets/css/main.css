@@ -7943,3 +7943,7 @@ Animate wobble-vertical
 .error-image img {
     width: 100%;
 }
+
+.features-box-area{
+    height: 100%;
+}

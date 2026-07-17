@@ -27,15 +27,15 @@
             <div class="about-2-content-area pl-50">
                <div class="title-box mb-35 wow fadeInRight" data-wow-delay=".5s">
                   <span class="section-sub-title">About Us</span>
-                  <h3 class="section-title mt-10">We Strive To Offer Intelligent Business Solutions</h3>
+                  <h3 class="section-title mt-10">Driving Digital Growth Through Precision IT Solutions</h3>
                </div>
-               <p class="mb-35">It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.</p>
+               <p class="mb-35">To deliver reliable, scalable, and cutting-edge technology solutions that drive digital transformation and give our clients a competitive edge in a fast-evolving market.</p>
                <div class="row mb-45">
                   <div class="col-lg-6">
                      <ul class="list-area">
-                        <li class="mb-10">Technology Consultancy</li>
-                        <li class="mb-10">We Provide best services</li>
-                        <li class="mb-10">Maintenance And Support</li>
+                        <li class="mb-10">IT Service</li>
+                        <li class="mb-10">Software Managment</li>
+                        <li class="mb-10">Hardware Solutions</li>
                      </ul>
                   </div>
                   <div class="col-lg-6">

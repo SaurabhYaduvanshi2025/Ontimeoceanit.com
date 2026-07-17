@@ -11,9 +11,7 @@
                            <img src="assets/imgs/logo/logo-white.svg" alt="">
                         </figure>
                         <p class="mt-40 mb-30">
-                           Phasellus ultricies aliquam volutpat 
-                           ullamcorper laoreet neque, a lacinia
-                           curabitur lacinia mollis
+                          Ontimeoceanit delivers reliable, scalable, and cutting-edge technology solutions to drive your digital transformation. From robust web development to seamless IT support, we manage your technology so you can focus on growing your business.
                         </p>
                         <div class="working-hours">
                            <h6 class="text-white mb-20">Working Hours:</h6>

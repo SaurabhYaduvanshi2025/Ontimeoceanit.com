@@ -71,14 +71,14 @@
                            <img src="assets/imgs/resources/service-tab-1.jpg" alt="">
                         </figure>
                         <div class="content p-relative">
-                           <h4>IT Consultancy</h4>
-                           <p class="pt-15 pb-10">It is a long established fact that a reader will  content of a page when looking at layout the point of using lorem.</p>
+                           <h4>IT Service</h4>
+                           <p class="pt-15 pb-10">We deliver proactive IT support, network security, and cloud management to keep your business running without interruptions. Our team ensures your systems are secure, optimized, and scalable for future growth.</p>
                            <ul class="tab-list-content">
                               <li>Accurate Testing Processes</li>
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
+                           <a class="primary-btn-1 btn-hover mt-20" href="service.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>
@@ -93,14 +93,14 @@
                            <img src="assets/imgs/resources/service-tab-1.jpg" alt="">
                         </figure>
                         <div class="content p-relative">
-                           <h4>App Development</h4>
-                           <p class="pt-15 pb-10">It is a long established fact that a reader will  content of a page when looking at layout the point of using lorem.</p>
+                           <h4>Software Managment</h4>
+                           <p class="pt-15 pb-10">From custom application development to seamless integrations, we manage your software lifecycle. We build and maintain robust backend systems and intuitive interfaces tailored to your workflow.</p>
                            <ul class="tab-list-content">
                               <li>Accurate Testing Processes</li>
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
+                           <a class="primary-btn-1 btn-hover mt-20" href="service.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>
@@ -115,14 +115,14 @@
                            <img src="assets/imgs/resources/service-tab-1.jpg" alt="">
                         </figure>
                         <div class="content p-relative">
-                           <h4>Database Security</h4>
-                           <p class="pt-15 pb-10">It is a long established fact that a reader will  content of a page when looking at layout the point of using lorem.</p>
+                           <h4>Hardware Solutions</h4>
+                           <p class="pt-15 pb-10">We source, install, and maintain high-performance hardware infrastructure for your business. From secure server setups to reliable workstation configurations, we ensure your physical tech is always dependable.</p>
                            <ul class="tab-list-content">
                               <li>Accurate Testing Processes</li>
                               <li>100% Satisfaction Guarantee</li>
                               <li>Award Winning Company</li>
                            </ul>
-                           <a class="primary-btn-1 btn-hover mt-20" href="services.php">
+                           <a class="primary-btn-1 btn-hover mt-20" href="service.php">
                               Read more &nbsp; | <i class="icon-right-arrow"></i>
                               <span style="top: 147.172px; left: 108.5px;"></span>
                            </a>
@@ -138,7 +138,7 @@
                         </figure>
                         <div class="content p-relative">
                            <h4>Marketing & Reporting</h4>
-                           <p class="pt-15 pb-10">It is a long established fact that a reader will  content of a page when looking at layout the point of using lorem.</p>
+                           <p class="pt-15 pb-10">Grow your digital footprint with data-driven marketing strategies and transparent performance reporting. We analyze key metrics to optimize your campaigns, increase conversion rates, and drive measurable ROI.</p>
                            <ul class="tab-list-content">
                               <li>Accurate Testing Processes</li>
                               <li>100% Satisfaction Guarantee</li>

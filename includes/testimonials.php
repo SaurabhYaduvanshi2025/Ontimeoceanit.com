@@ -92,7 +92,7 @@
                            </div>
                         </div>
                         <div class="content">
-                           <p>“ Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo ”</p>
+                           <p>“ Ontimeoceanit completely transformed our workflow. They delivered a custom software management solution that cut our processing time in half. Their development process is highly structured and professional. ”</p>
                         </div>                       
                      </div>
                      <!-- block -->
@@ -117,7 +117,7 @@
                            </div>
                         </div>
                         <div class="content">
-                           <p>“ Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo ”</p>
+                           <p>“ Finding a reliable IT partner is tough, but Ontimeoceanit made it simple. From robust hardware solutions to seamless cloud management, their team ensures our infrastructure never lets us down. ”</p>
                         </div>                       
                      </div>
                   </div>

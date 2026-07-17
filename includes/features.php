@@ -12,7 +12,7 @@
                </div>
                <h5 class="mt-20 mb-10"><a href="services.php">Cyber Security</a></h5>
                <p>
-                  Pellentesque nec the condimentum nec lorem nulla augue est ultricies ac iaculis ut euismod quis sapien.
+                  Protect your digital assets from evolving cyber threats. Our team implements strict security protocols, regular vulnerability assessments, end-to-end encryption, and robust backup solutions to keep your business and customer data safe.
                </p>
             </div>
          </div>
@@ -26,7 +26,7 @@
                </div>
                <h5 class="mt-20 mb-10"><a href="services.php">IT Management</a></h5>
                <p>
-                  Pellentesque nec the condimentum nec lorem nulla augue est ultricies ac iaculis ut euismod quis sapien.
+                  We design and build scalable, secure, and tailored software solutions that align perfectly with your unique business goals. From initial concept to deployment, our team ensures high performance and seamless integration with your existing systems.
                </p>
             </div>
          </div>
@@ -40,7 +40,7 @@
                </div>
                <h5 class="mt-20 mb-10"><a href="services.php">Web Development</a></h5>
                <p>
-                  Pellentesque nec the condimentum nec lorem nulla augue est ultricies ac iaculis ut euismod quis sapien.
+                   We build powerful, tailor-made web applications designed to solve your specific business challenges. By focusing on clean architecture and scalable code, we deliver high-performance web platforms that grow seamlessly alongside your business operations.
                </p>
             </div>
          </div>

@@ -14,7 +14,7 @@
                </div>
                <div class="content">
                   <h4 class="pt-25 pb-25">Define Requirements</h4>
-                  <p>In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur</p>
+                  <p>We start by understanding your business goals and technical needs. Through detailed discussions, we map out the project scope, target audience, and feature sets to create a clear blueprint for development.</p>
                </div>
             </div>
          </div>
@@ -27,7 +27,7 @@
                </div>
                <div class="content">
                   <h4 class="pt-25 pb-25">Design & Prototyping</h4>
-                  <p>In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur</p>
+                  <p>Next, we translate requirements into visual wireframes and interactive prototypes. This stage focuses on creating user-friendly layouts and defining the software architecture before writing the core code.</p>
                </div>
             </div>
          </div>
@@ -40,7 +40,7 @@
                </div>
                <div class="content">
                   <h4 class="pt-25 pb-25">Finial Solution</h4>
-                  <p>In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur</p>
+                  <p>In the final phase, our engineers write clean code, conduct rigorous testing, and deploy the fully optimized website or application. We ensure the final product is secure, fast, and ready to scale.</p>
                </div>
             </div>
          </div>
