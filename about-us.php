@@ -126,7 +126,7 @@
                <div class="breadcrumb__menu">
                   <nav>
                      <ul>
-                        <li><span><a href="index.html">Home</a></span></li>
+                        <li><span><a href="index.php">Home</a></span></li>
                         <li><span>About</span></li>
                      </ul>
                   </nav>
@@ -169,7 +169,7 @@
                  <div class="inner p-relative">
                      <div class="icon-box">
                         <i class="icon-prize"></i>
-                        <h4><span class="counter">25</span> Years</h4>
+                        <h4><span class="counter">5</span> Years</h4>
                         <p>Working Experience</p>
                      </div>
                  </div>
@@ -184,14 +184,14 @@
                   <span class="section-sub-title">About Us</span>
                   <h3 class="section-title mt-10">Selecting the Finest IT Service Provider</h3>
                </div>
-               <p class="mb-35 wow fadeInLeft" data-wow-delay=".5s">It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.</p>
+               <p class="mb-35 wow fadeInLeft" data-wow-delay=".5s">Choosing the right technology partner is critical for your business success. At Ontimeoceanit, we replace complex technical hurdles with streamlined, high-performance IT infrastructure. We ensure your systems are secure, efficient, and perfectly aligned with your long-term operational goals.</p>
                <div class="icon-box mb-20 wow fadeInLeft" data-wow-delay=".8s">
                   <div class="icon">
                      <img src="assets/imgs/about/about-three-icon1.png" alt="img">
                   </div>
                   <div class="content">
-                     <h5><a href="about.html">Business Growth</a></h5>
-                     <p>Embarrassing hidden in the middle All the Lorem Ipsum generators on the Internet repeat predefined chunks</p>
+                     <h5><a href="#">Business Growth</a></h5>
+                     <p>Technology is the ultimate catalyst for scaling modern enterprises. At Ontimeoceanit, we design and implement robust digital solutions that eliminate operational bottlenecks, optimize workflows, and open new revenue channels, allowing your business to expand smoothly and sustainably.</p>
                   </div>
                </div>
                <div class="icon-box mb-20 wow fadeInLeft" data-wow-delay=".9s">
@@ -199,12 +199,12 @@
                      <img src="assets/imgs/about/about-three-icon2.png" alt="img">
                   </div>
                   <div class="content">
-                     <h5><a href="about.html">Technology Consultancy</a></h5>
-                     <p>Embarrassing hidden in the middle All the Lorem Ipsum generators on the Internet repeat predefined chunks</p>
+                     <h5><a href="#">Technology Consultancy</a></h5>
+                     <p>We help you navigate complex technical decisions with strategic roadmap planning, architecture design, and modern stack selection. Our consultants align your IT infrastructure with your long-term business objectives to maximize performance and efficiency.</p>
                   </div>
                </div>
                <div class="about-btn-box wow fadeInLeft" data-wow-delay="1s">
-                  <a class="primary-btn-1 btn-hover" href="about.html">
+                  <a class="primary-btn-1 btn-hover" href="service.php">
                      about us &nbsp; | <i class="icon-right-arrow"></i>
                      <span style="top: 147.172px; left: 108.5px;"></span>
                   </a>

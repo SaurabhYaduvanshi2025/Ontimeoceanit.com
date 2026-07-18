@@ -154,8 +154,8 @@
                   <div class="icon-box">
                      <img src="assets/imgs/icon/icon-2.png" alt="img">
                   </div>
-                  <h4 class="mb-15"><a href="service-details.html">IT Consultancy</a></h4>
-                  <p class="mb-25">Lorem ipsum dolor sit amet, is consectetur adipisci elit. Integer feugiat tortor non there are many other nullam.</p>
+                  <h4 class="mb-15"><a href="service-details.html">Gov Paper Exam Systems</a></h4>
+                  <p class="mb-25">We design secure, tamper-proof infrastructure for large-scale government examinations. Our setups incorporate high-security servers, reliable local networks, and identity verification hardware to ensure seamless, glitch-free execution of exam workflows.</p>
                   <a href="service-details.html" class="service-btn">Read More <i class="icon-arrow-right-double"></i></a>
                </div>
             </div>
@@ -170,8 +170,8 @@
                   <div class="icon-box">
                      <img src="assets/imgs/icon/icon-3.png" alt="img">
                   </div>
-                  <h4 class="mb-15"><a href="service-details.html">App Development</a></h4>
-                  <p class="mb-25">Lorem ipsum dolor sit amet, is consectetur adipisci elit. Integer feugiat tortor non there are many other nullam.</p>
+                  <h4 class="mb-15"><a href="service-details.html">Call Center Systems</a></h4>
+                  <p class="mb-25">Maximize agent efficiency with specialized call center infrastructure. We configure robust VoIP systems, automated dialers, CRM integrations, and multi-channel communication pipelines engineered for zero downtime and clear voice quality.</p>
                   <a href="service-details.html" class="service-btn">Read More <i class="icon-arrow-right-double"></i></a>
                </div>
             </div>
@@ -186,8 +186,8 @@
                   <div class="icon-box">
                      <img src="assets/imgs/icon/icon.png" alt="img">
                   </div>
-                  <h4 class="mb-15"><a href="service-details.html">Database Security</a></h4>
-                  <p class="mb-25">Lorem ipsum dolor sit amet, is consectetur adipisci elit. Integer feugiat tortor non there are many other nullam.</p>
+                  <h4 class="mb-15"><a href="service-details.html">Cubicle Office Infra</a></h4>
+                  <p class="mb-25">Upgrade your workspace with modern, modular office infrastructure. We handle end-to-end structured cabling, high-speed Wi-Fi zoning, centralized printing servers, and reliable power backup configurations to keep your daily operations running efficiently.</p>
                   <a href="service-details.html" class="service-btn">Read More <i class="icon-arrow-right-double"></i></a>
                </div>
             </div>
@@ -218,8 +218,8 @@
                   <div class="icon-box">
                      <img src="assets/imgs/icon/icon-2.png" alt="img">
                   </div>
-                  <h4 class="mb-15"><a href="service-details.html">IT Consultancy</a></h4>
-                  <p class="mb-25">Lorem ipsum dolor sit amet, is consectetur adipisci elit. Integer feugiat tortor non there are many other nullam.</p>
+                  <h4 class="mb-15"><a href="service-details.html">Institution Solutions</a></h4>
+                  <p class="mb-25">Empower schools, colleges, and training centers with smart campus infrastructure. We build connected ecosystems featuring secure computer labs, digital smart classrooms, robust student management networks, and campus-wide security frameworks.</p>
                   <a href="service-details.html" class="service-btn">Read More <i class="icon-arrow-right-double"></i></a>
                </div>
             </div>
@@ -234,8 +234,8 @@
                   <div class="icon-box">
                      <img src="assets/imgs/icon/icon-3.png" alt="img">
                   </div>
-                  <h4 class="mb-15"><a href="service-details.html">App Development</a></h4>
-                  <p class="mb-25">Lorem ipsum dolor sit amet, is consectetur adipisci elit. Integer feugiat tortor non there are many other nullam.</p>
+                  <h4 class="mb-15"><a href="service-details.html">IT Services</a></h4>
+                  <p class="mb-25">We deliver proactive IT support and robust infrastructure management to keep your business operations running without interruptions. Our team ensures your technical systems are secure, optimized, and fully scalable for future growth.</p>
                   <a href="service-details.html" class="service-btn">Read More <i class="icon-arrow-right-double"></i></a>
                </div>
             </div>
