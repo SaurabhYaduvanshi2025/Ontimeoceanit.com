@@ -14,7 +14,7 @@
                   <i class="icon-roof-4"></i>
                </div>
                <div class="content">
-                  <h5><a href="services.html">Bar Tender Configuration</a></h5>
+                  <h5><a href="#">Bar Tender Configuration</a></h5>
                   <p>We provide expert integration and configuration of BarTender software to streamline your labeling and packaging workflows. Our team ensures seamless database connectivity, automated printing layouts, and exact compliance tracking to eliminate labeling errors across your supply chain.</p>
                </div>
            </div>
@@ -25,7 +25,7 @@
                   <i class="icon-target"></i>
                </div>
                <div class="content">
-                  <h5><a href="services.html">Mission Statement Ontimeoceanit</a></h5>
+                  <h5><a href="#">Mission Statement Ontimeoceanit</a></h5>
                   <p>At Ontimeoceanit, our mission is to deliver reliable, scalable, and cutting-edge technology solutions that drive digital transformation. We commit to replacing complex technical challenges with streamlined IT infrastructure, enabling businesses to optimize workflows, accelerate growth, and maintain a competitive edge in a fast-evolving market.</p>
                </div>
            </div>
@@ -36,7 +36,7 @@
                   <i class="icon-help"></i>
                </div>
                <div class="content">
-                  <h5><a href="services.html">Safety And Reliability</a></h5>
+                  <h5><a href="#">Safety And Reliability</a></h5>
                   <p>We build robust, secure systems with multi-layered defenses and automated backups to ensure your business operations never halt. Our proactive threat monitoring and data backup infrastructure guarantee complete data integrity, compliance, and maximum uptime for your critical digital assets.</p>
                </div>
            </div>
