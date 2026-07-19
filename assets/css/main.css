@@ -7947,3 +7947,7 @@ Animate wobble-vertical
 .features-box-area{
     height: 100%;
 }
+
+.service-slider-area .content p {
+    min-height: 180px;
+}
