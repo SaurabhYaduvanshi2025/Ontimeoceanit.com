@@ -7948,6 +7948,42 @@ Animate wobble-vertical
     height: 100%;
 }
 
-.service-slider-area .content p {
-    min-height: 180px;
+ .service-slider-area{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+      .service-page-section .col-xxl-4,
+      .service-page-section .col-xl-4,
+      .service-page-section .col-lg-4 {
+         display: flex;
+      }
+
+      .service-page-section .service-slider-area {
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+      }
+
+      .service-page-section .service-slider-area .image {
+         margin-bottom: 0;
+      }
+
+      .service-page-section .service-slider-area .image img {
+         height: 240px;
+         object-fit: cover;
+         width: 100%;
+      }
+
+      .service-page-section .service-slider-area .content {
+         display: flex;
+         flex-direction: column;
+         flex: 1;
+         height: 100%;
+      }
+
+      .service-page-section .service-slider-area .service-btn {
+         margin-top: auto;
+      }
