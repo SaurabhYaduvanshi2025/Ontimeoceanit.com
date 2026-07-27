@@ -171,7 +171,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-2.jpg" alt="">
+                        <img src="assets/imgs/service/callcenter.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -211,7 +211,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-8.jpg" alt="">
+                        <img src="assets/imgs/service/data.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -311,7 +311,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/cameramanagement.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -463,7 +463,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/pipeline.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -485,7 +485,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/pcbiuld.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -507,7 +507,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/laptopreparing.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -528,7 +528,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/servermanagement.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -550,7 +550,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/accersios.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -572,7 +572,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/macreparing.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -592,7 +592,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/databasesecurity.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
