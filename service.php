@@ -332,7 +332,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/servermanagement.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -354,7 +354,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/cat6.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -376,7 +376,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/bartender.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -399,7 +399,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/mass360.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -421,7 +421,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/aws.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -442,7 +442,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-10.jpg" alt="">
+                        <img src="assets/imgs/service/devops.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
