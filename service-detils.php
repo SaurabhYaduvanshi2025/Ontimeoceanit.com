@@ -7,9 +7,41 @@ $services = [
    'gov-paper-exam-systems' => [
       'title' => 'Gov Paper Exam Systems',
       'image' => 'assets/imgs/service/service-1.jpg',
-      'intro' => 'We design secure, tamper-proof infrastructure for large-scale government examinations. Our solutions combine high-security servers, reliable local networks, and identity verification hardware to keep every exam session dependable.',
-      'features' => ['Secure exam terminals', 'Reliable backup power', 'Real-time monitoring'],
-      'details' => ['Our team plans every exam environment for stability, speed, and strict access control.', 'We support large-scale deployment across multiple centers with centralized oversight.']
+      'intro' => 'At ITWEB, we provide comprehensive Government Exam Preparation programs designed to help students achieve success in a wide range of competitive examinations. Our experienced faculty, structured learning approach, and updated study materials prepare candidates for government job exams with confidence. Whether you are preparing for teaching, banking, railway, police, defence, SSC, UPSC, or state-level competitive examinations, we provide the right guidance, practice, and support to help you perform at your best.',
+      'features' => [
+    '✔ Expert Faculty
+Learn from experienced teachers who specialize in government competitive examinations.',
+
+    '✔ Updated Study Material
+Well-structured notes and learning resources based on the latest exam syllabus.',
+
+    '✔ Daily Practice Sessions
+Regular practice questions and assignments to strengthen every subject.',
+
+    '✔ Mock Test Series
+Weekly and monthly mock tests designed to simulate the real examination environment.',
+
+    '✔ Previous Year Papers
+Practice with solved previous year question papers and understand the latest exam pattern.',
+
+    '✔ Doubt Clearing Classes
+Get your doubts resolved through dedicated one-to-one and group discussion sessions.',
+
+    '✔ Current Affairs
+Stay updated with daily current affairs and important general knowledge topics.',
+
+    '✔ Interview Guidance
+Professional interview preparation and personality development for final selection.',
+
+    '✔ Time Management
+Learn smart strategies to solve questions quickly and accurately during the examination.',
+
+    '✔ Performance Analysis
+Track your progress with regular assessments and personalized performance reports.'
+],
+      'details' => ['Our Government Exam Preparation programs are carefully designed to meet the latest examination patterns and syllabus prescribed by various government recruitment boards. We provide classroom coaching, online learning support, detailed subject-wise study materials, regular assessments, and mock examinations that simulate the real exam environment. Our experienced mentors guide students through every stage of preparation, helping them build strong conceptual knowledge, improve problem-solving skills, and develop effective examination strategies.',
+
+        'We believe that every student deserves the right guidance to achieve their dream government job. Our dedicated faculty continuously monitors student progress, identifies areas for improvement, and provides personalized mentoring to maximize success. Through regular practice tests, current affairs sessions, doubt-clearing classes, and performance analysis, we help students gain confidence and improve their overall examination performance. Our goal is not only to prepare students for competitive exams but also to build the knowledge, discipline, and confidence required to succeed in their careers.']
    ],
    'call-center-systems' => [
       'title' => 'Call Center Systems',
