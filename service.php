@@ -150,7 +150,7 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/service-1.jpg" alt="">
+                        <img src="assets/imgs/service/govtexam.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
@@ -219,8 +219,7 @@
                         </div>
                         <h4 class="mb-15"><a href="service-details.php?service=database-security">Database Security</a>
                         </h4>
-                        <p class="mb-25">Lorem ipsum dolor sit amet, is consectetur adipisci elit. Integer feugiat
-                           tortor non there are many other nullam.</p>
+                        <p class="mb-25">Our database security service provides robust protection for your sensitive data against breaches, unauthorized access, and cyber threats using advanced defense strategies. We bring deep expertise in industry-standard encryption, role-based access control, secure backups, and comprehensive vulnerability assessments to keep your information safe. Choosing us ensures complete data privacy, regulatory compliance, and 24/7 protection for your business-critical databases.</p>
                         <a href="service-details.php?service=database-security" class="service-btn">Read More <i
                               class="icon-arrow-right-double"></i></a>
                      </div>
