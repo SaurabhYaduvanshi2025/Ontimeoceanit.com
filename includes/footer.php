@@ -8,7 +8,7 @@
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                      <div class="footer-widget-1">
                         <figure class="image">
-                           <img src="assets/imgs/logo/logo-white.svg" alt="">
+                           <img src="assets/imgs/logo/ontimelogo.png" alt="">
                         </figure>
                         <p class="mt-40 mb-30">
                           Ontimeoceanit delivers reliable, scalable, and cutting-edge technology solutions to drive your digital transformation. From robust web development to seamless IT support, we manage your technology so you can focus on growing your business.

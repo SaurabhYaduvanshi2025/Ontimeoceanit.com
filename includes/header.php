@@ -6,7 +6,7 @@
                   <div class="header-left">
                      <div class="header-logo">
                         <a href="index.php">
-                           <img src="assets/imgs/logo/itweb.png" alt="header logo">
+                           <img src="assets/imgs/logo/ontimelogo.png" alt="header logo">
                         </a>
                      </div>                     
                   </div>                  
