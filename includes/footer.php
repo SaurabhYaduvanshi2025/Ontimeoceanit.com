@@ -1,3 +1,6 @@
+
+
+
    <footer>
       <div class="footer-main bg-color-1 p-relative">
          <div class="footer-shape-1" data-background="assets/imgs/footer/shape-f-1.png"></div>
@@ -71,7 +74,7 @@
          <div class="small-container">
             <div class="footer-bottom pt-30 pb-30">
                <div class="left-area p-relative">
-                  <span>© All Copyright 2024 by <a href="#">wotech</a></span>
+                  <span>© All Copyright 2026 by <a href="#">Ontimeoceanit</a></span>
                </div>
                <div class="footer-socials p-relative">
                   <span><a href="#"><i class="fab fa-facebook-f"></i></a></span>
@@ -80,8 +83,8 @@
                   <span><a href="#"><i class="fab fa-youtube"></i></a></span>
                </div>
                <div class="right-area p-relative">
-                  <span><a href="#">Terms & Condition</a></span>
-                  <span><a href="#">Privacy Policy</a></span>
+                  <span><a href="#">Designed & Developed by  <strong>Saurabh Yadav</strong></a></span>
+                  <!-- <span><a href="#">Privacy Policy</a></span> -->
                </div>
             </div> 
          </div>     

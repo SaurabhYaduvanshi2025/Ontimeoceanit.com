@@ -221,7 +221,7 @@ Receive professional technical assistance for quick issue resolution and uninter
    ],
    'it-services' => [
       'title' => 'IT Services',
-      'image' => 'assets/imgs/service/service-10.jpg',
+      'image' => 'assets/imgs/service/itservers.png',
 
       'intro' => 'At OntimeOceanIT, we provide reliable and professional IT Services that help businesses maintain a secure, efficient, and high-performing technology environment. From day-to-day technical support and system maintenance to network management, server administration, cybersecurity, and infrastructure optimization, our experienced IT professionals ensure your business operations run smoothly without unexpected interruptions. We deliver customized IT solutions that improve productivity, reduce downtime, and allow organizations to focus on their core business while we manage their technology.',
 
@@ -265,7 +265,7 @@ Access expert IT professionals for proactive maintenance and long-term technolog
    ],
    'networking' => [
       'title' => 'Networking',
-      'image' => 'assets/imgs/service/service-10.jpg',
+      'image' => 'assets/imgs/service/networkingma.png',
 
       'intro' => 'At OntimeOceanIT, we provide reliable and high-performance Networking solutions that keep your business connected, secure, and ready for growth. Our networking experts design, install, and manage robust wired and wireless network infrastructures for businesses, offices, educational institutions, healthcare facilities, and enterprises. Whether you need a new network setup, an upgrade to your existing infrastructure, or ongoing network support, we deliver scalable solutions that ensure fast connectivity, seamless communication, and maximum network reliability.',
 
@@ -309,7 +309,7 @@ Receive proactive maintenance, troubleshooting, and expert networking support wh
    ],
    'hardware-management' => [
       'title' => 'Hardware Management',
-      'image' => 'assets/imgs/service/service-10.jpg',
+      'image' => 'assets/imgs/service/hardwaremanagemt.png',
 
       'intro' => 'At OntimeOceanIT, we provide professional Hardware Management services to ensure your organizations IT equipment operates efficiently, reliably, and without interruption. From desktops, laptops, servers, printers, and networking devices to other essential hardware, our experts handle installation, configuration, maintenance, upgrades, and troubleshooting. We help businesses maximize the lifespan of their IT assets while minimizing downtime, improving performance, and ensuring every device is always ready to support daily business operations.',
 
@@ -353,7 +353,7 @@ Receive expert hardware support, maintenance, and consultation whenever your bus
    ],
    'cameras-management' => [
       'title' => 'Camera Management',
-      'image' => 'assets/imgs/service/service-10.jpg',
+      'image' => 'assets/imgs/service/cameramanagemen.png',
 
       'intro' => 'At OntimeOceanIT, we provide complete Camera Management solutions to help businesses, offices, educational institutions, warehouses, retail stores, hospitals, and residential properties maintain a safe and secure environment. Our CCTV surveillance systems are designed to deliver high-quality video monitoring, real-time surveillance, remote access, and reliable recording capabilities. From consultation and installation to maintenance and technical support, we ensure your security infrastructure operates efficiently and provides continuous protection for your people, property, and valuable assets.',
 
@@ -397,7 +397,7 @@ Receive expert troubleshooting, maintenance, and ongoing support for your comple
    ],
    'server-management' => [
       'title' => 'Server Management',
-      'image' => 'assets/imgs/service/service-10.jpg',
+      'image' => 'assets/imgs/service/servermanagementeee.png',
 
       'intro' => 'At OntimeOceanIT, we provide professional Server Management services to ensure your business servers remain secure, stable, and highly available at all times. Our experienced server specialists handle installation, configuration, monitoring, maintenance, security updates, backup management, and performance optimization for both physical and cloud-based servers. We help businesses minimize downtime, protect critical data, and maintain uninterrupted operations through proactive server administration and continuous technical support.',
 
@@ -441,7 +441,7 @@ Receive expert assistance for server issues, performance problems, and emergency
    ],
    'cat6-wiring-solutions' => [
       'title' => 'CAT6 Wiring Solutions',
-      'image' => 'assets/imgs/service/service-1.jpg',
+      'image' => 'assets/imgs/service/ct6.png',
 
       'intro' => 'At OntimeOceanIT, we provide professional CAT6 Wiring Solutions that deliver fast, reliable, and future-ready network connectivity for offices, educational institutions, commercial buildings, data centers, and industrial facilities. Our certified technicians design and install structured CAT6 cabling systems that support high-speed data transmission, seamless communication, and long-term network performance. Every installation is completed with precision, proper cable management, and industry-standard practices to ensure a clean, organized, and highly efficient networking infrastructure.',
 
@@ -485,7 +485,7 @@ Provide complete installation, maintenance, and ongoing technical assistance for
    ],
    'bartender-configuration' => [
       'title' => 'BarTender Configuration',
-      'image' => 'assets/imgs/service/service-2.jpg',
+      'image' => 'assets/imgs/service/bartendereee.png',
 
       'intro' => 'At OntimeOceanIT, we provide professional BarTender Configuration services to help businesses streamline their labeling and barcode printing processes with accuracy and efficiency. Whether you operate in manufacturing, warehousing, logistics, healthcare, retail, or distribution, our experts configure BarTender software to automate label printing, improve inventory management, and eliminate manual errors. We ensure seamless integration with your printers, databases, ERP systems, and business applications, allowing you to achieve faster operations and complete traceability across your workflow.',
 
@@ -529,7 +529,7 @@ Provide user training and ongoing technical support to help your team efficientl
    ],
    'mass360-software' => [
       'title' => 'Mass360 Software',
-      'image' => 'assets/imgs/service/service-3.jpg',
+      'image' => 'assets/imgs/service/maacs360.png',
 
       'intro' => 'At OntimeOceanIT, we provide professional MaaS360 Software solutions to help organizations securely manage and protect their mobile devices, tablets, laptops, and endpoint systems from a centralized platform. Our experts deploy, configure, and manage IBM MaaS360 to give businesses complete control over corporate devices, ensuring data security, regulatory compliance, and seamless device management. Whether your workforce operates from the office or remotely, our MaaS360 solutions help you maintain security without compromising employee productivity.',
 
@@ -573,7 +573,7 @@ Receive expert deployment, configuration, troubleshooting, and ongoing MaaS360 s
    ],
    'aws-solutions' => [
       'title' => 'AWS Solutions',
-      'image' => 'assets/imgs/service/service-8.jpg',
+      'image' => 'assets/imgs/service/Aws.png',
 
       'intro' => 'At OntimeOceanIT, we provide comprehensive AWS Solutions that help businesses leverage the power of Amazon Web Services to build secure, scalable, and high-performing cloud infrastructures. Our cloud experts assist organizations in migrating applications, deploying cloud environments, optimizing resources, and managing AWS services with maximum efficiency. Whether you are moving to the cloud for the first time or expanding your existing AWS environment, we deliver reliable cloud solutions that improve business agility, reduce operational costs, and ensure high availability.',
 
@@ -617,7 +617,7 @@ Receive ongoing monitoring, maintenance, troubleshooting, and expert technical s
    ],
    'devops-services' => [
       'title' => 'DevOps Services',
-      'image' => 'assets/imgs/service/service-9.jpg',
+      'image' => 'assets/imgs/service/devopss.png',
 
       'intro' => 'At OntimeOceanIT, we provide comprehensive DevOps Services that help businesses accelerate software development, improve deployment efficiency, and maintain reliable IT operations. By integrating development and operations through automation, continuous integration, continuous deployment (CI/CD), cloud technologies, and infrastructure management, we enable organizations to deliver high-quality applications faster and more securely. Our DevOps solutions reduce manual effort, enhance collaboration, and ensure consistent performance across every stage of the software development lifecycle.',
 
@@ -661,7 +661,7 @@ Receive continuous monitoring, optimization, troubleshooting, and expert DevOps 
    ],
    'cicd-pipeline' => [
       'title' => 'CI/CD Pipeline Configuration',
-      'image' => 'assets/imgs/service/service-10.jpg',
+      'image' => 'assets/imgs/service/cicdpipe.png',
 
       'intro' => 'At OntimeOceanIT, we provide professional CI/CD Pipeline Configuration services that automate your software development and deployment process from code commit to production. Our DevOps experts design secure and efficient Continuous Integration (CI) and Continuous Deployment (CD) pipelines that help development teams build, test, and release applications faster with fewer errors. By automating repetitive tasks and streamlining workflows, we enable businesses to improve software quality, accelerate delivery, and maintain consistent deployment across development, testing, and production environments.',
 
@@ -705,7 +705,7 @@ Provide continuous monitoring, optimization, troubleshooting, and technical supp
    ],
    'custom-pc-building' => [
     'title' => 'Custom PC Building',
-    'image' => 'assets/imgs/service/service-10.jpg',
+    'image' => 'assets/imgs/service/custompc.png',
 
     'intro' => 'At OntimeOceanIT, we specialize in Custom PC Building services designed to deliver powerful, reliable, and fully customized computer systems for every requirement. Whether you need a high-performance gaming PC, a professional workstation for video editing and graphic design, a software development machine, or a business desktop for daily operations, our experts carefully select and assemble every component to match your performance goals and budget. Every system is built using quality hardware, thoroughly tested, and optimized to ensure maximum speed, stability, and long-term reliability.',
 
@@ -750,7 +750,7 @@ Provide ongoing maintenance, hardware upgrades, troubleshooting, and expert tech
 
 'laptop-repairing' => [
     'title' => 'Laptop Repairing',
-    'image' => 'assets/imgs/service/service-10.jpg',
+    'image' => 'assets/imgs/service/laptopreparin.png',
 
     'intro' => 'At OntimeOceanIT, we provide professional Laptop Repairing services to restore the performance, reliability, and lifespan of your laptops. Our experienced technicians diagnose and repair hardware and software issues for all major laptop brands, ensuring quick turnaround times and dependable solutions. Whether your laptop has a damaged screen, battery issues, overheating problems, motherboard faults, or software errors, we deliver cost-effective repair services that get your device back to peak performance.',
 
@@ -795,7 +795,7 @@ Provide preventive maintenance, diagnostics, and ongoing technical support to ke
 
    'server-repairing' => [
     'title' => 'Server Repairing',
-    'image' => 'assets/imgs/service/service-10.jpg',
+    'image' => 'assets/imgs/service/serverreparing.png',
 
     'intro' => 'At OntimeOceanIT, we provide professional Server Repairing services to restore the performance, stability, and reliability of your business-critical servers. Our experienced engineers diagnose and repair hardware failures, operating system issues, storage problems, and network-related faults to minimize downtime and ensure uninterrupted business operations. Whether your organization uses tower servers, rack servers, or blade servers, we deliver fast, reliable, and cost-effective repair solutions tailored to your infrastructure.',
 
@@ -839,7 +839,7 @@ Deliver continuous maintenance, monitoring, and expert technical assistance for 
 ],
 'workstation-repairing' => [
     'title' => 'Workstation Repairing',
-    'image' => 'assets/imgs/service/service-10.jpg',
+    'image' => 'assets/imgs/service/workstationreparing.png',
 
     'intro' => 'At OntimeOceanIT, we provide professional Workstation Repairing services for high-performance systems used in engineering, architecture, graphic design, video editing, software development, animation, and other resource-intensive applications. Our experienced technicians diagnose and repair both hardware and software issues to restore maximum performance, stability, and reliability. Whether your workstation is experiencing hardware failures, overheating, performance bottlenecks, or operating system issues, we deliver efficient and cost-effective repair solutions to keep your business running without interruption.',
 
@@ -884,7 +884,7 @@ Provide continuous workstation support, troubleshooting, upgrades, and long-term
 
 'mac-repairing' => [
     'title' => 'Mac Repairing',
-    'image' => 'assets/imgs/service/service-1.jpg',
+    'image' => 'assets/imgs/service/macreparin.png',
 
     'intro' => 'At OntimeOceanIT, we provide professional Mac Repairing services for MacBook, iMac, Mac Mini, and other Apple devices. Our certified technicians specialize in diagnosing and repairing both hardware and software issues while maintaining the performance, reliability, and security that Apple users expect. Whether your Mac is experiencing screen damage, battery issues, motherboard faults, macOS problems, or performance slowdowns, we deliver efficient and reliable repair solutions using high-quality components and industry-standard repair practices.',
 
@@ -929,7 +929,7 @@ Provide ongoing maintenance, diagnostics, software updates, and expert technical
 
    'peripheral-devices' => [
     'title' => 'Peripheral Devices',
-    'image' => 'assets/imgs/service/service-2.jpg',
+    'image' => 'assets/imgs/service/pherical.png',
 
     'intro' => 'At OntimeOceanIT, we provide complete Peripheral Device solutions to enhance the performance, productivity, and efficiency of your IT environment. We supply, install, configure, and maintain a wide range of computer peripherals, including monitors, printers, scanners, keyboards, mice, storage devices, webcams, barcode scanners, biometric devices, and other essential accessories. Our experts ensure every peripheral integrates seamlessly with your existing systems, delivering reliable performance for offices, educational institutions, healthcare organizations, retail businesses, and enterprise environments.',
 
@@ -1000,7 +1000,7 @@ echo <<<HTML
    <title>{$serviceTitle} - ITWEB</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/favicon.png">
+      <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/ontimelogo.png">
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
    <link rel="stylesheet" href="assets/css/animate.css">

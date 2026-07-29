@@ -10,7 +10,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!-- Place favicon.ico in the root directory -->
-   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/favicon.png">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/ontimelogo.png">
    <!-- CSS here -->
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
@@ -89,7 +89,7 @@
                <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
                   <div class="offcanvas__logo">
                      <a href="dashboard.html">
-                        <img src="assets/imgs/logo/logo-white.svg" alt="Header Logo">
+                        <img src="assets/imgs/logo/ontimelogo.png" alt="Header Logo">
                      </a>
                   </div>
                   <div class="offcanvas__close">

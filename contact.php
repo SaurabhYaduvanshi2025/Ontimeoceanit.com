@@ -10,7 +10,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!-- Place favicon.ico in the root directory -->
-   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/favicon.png">
+
+   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/ontimelogo.png">
+
    <!-- CSS here -->
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
@@ -249,5 +251,4 @@
 </body>
 
 
-<!-- Mirrored from gramentheme.com/html/wotech/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Jul 2026 15:58:21 GMT -->
 </html>
