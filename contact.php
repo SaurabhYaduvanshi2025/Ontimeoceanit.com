@@ -1,3 +1,100 @@
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Load .env file
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+if (isset($_POST['submit'])) {
+
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $subject = trim($_POST['subject']);
+    $message = trim($_POST['message']);
+
+
+
+
+    $mail = new PHPMailer(true);
+
+try {
+
+    // SMTP Configuration
+    $mail->isSMTP();
+    $mail->Host       = $_ENV['MAIL_HOST'];
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $_ENV['MAIL_USERNAME'];
+    $mail->Password   = $_ENV['MAIL_PASSWORD'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = $_ENV['MAIL_PORT'];
+
+
+
+    // Sender
+$mail->setFrom($_ENV['MAIL_FROM'], $_ENV['MAIL_FROM_NAME']);
+
+// Receiver (jis email par contact form ki mail aayegi)
+$mail->addAddress($_ENV['MAIL_USERNAME']);
+
+// Reply-To (user ko reply karne ke liye)
+$mail->addReplyTo($email, $name);
+
+// Email Format
+$mail->isHTML(true);
+
+// Subject
+$mail->Subject = $subject;
+
+// Email Body
+$mail->Body = "
+<h2>New Contact Form Submission</h2>
+
+<p><strong>Name:</strong> {$name}</p>
+
+<p><strong>Email:</strong> {$email}</p>
+
+<p><strong>Phone:</strong> {$phone}</p>
+
+<p><strong>Subject:</strong> {$subject}</p>
+
+<p><strong>Message:</strong><br>{$message}</p>
+";
+
+// Plain Text Version
+$mail->AltBody = "
+Name: $name
+
+Email: $email
+
+Phone: $phone
+
+Subject: $subject
+
+Message:
+$message
+";
+
+// Send Email
+$mail->send();
+
+echo "Email sent successfully!";
+
+} catch (Exception $e) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+}
+
+}
+
+?>
+
+
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -181,37 +278,77 @@
                   <h3 class="section-title mt-10">Let’s Get in Touch</h3>
                </div>
                <div class="contact-page-form">
-                  <form action="#">
-                     <div class="row">
-                        <div class="col-lg-6">
-                           <label>Your Name*</label>
-                           <input type="text" placeholder="Your Name*" required>
-                        </div>
-                        <div class="col-lg-6">
-                           <label>Your Email*</label>
-                           <input type="email" placeholder="Your Email*" required>
-                        </div>
-                        <div class="col-lg-6">
-                           <label>Your Phone*</label>
-                           <input type="tel" placeholder="Your Phone*" required>
-                        </div>
-                        <div class="col-lg-6">
-                           <label>Subject*</label>
-                           <input type="text" placeholder="Subject*" required>
-                        </div>
-                        <div class="col-lg-12">
-                           <label>Your Message*</label>
-                           <textarea name="message" placeholder="Write Message" required></textarea>
-                        </div>
-                        <div class="col-lg-12">
-                           <button  type="submit" class="primary-btn-1 btn-hover">
-                              Send Now &nbsp; | <i class="icon-right-arrow"></i>
-                              <span style="top: 147.172px; left: 108.5px;"></span>
-                           </button>
-                        </div>
-                     </div>
-                  </form>
-               </div>
+                     <div class="contact-page-form">
+    <form action="" method="POST">
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <label for="name">Your Name <span>*</span></label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    placeholder="Enter Your Name"
+                    required>
+            </div>
+
+            <div class="col-lg-6">
+                <label for="email">Your Email <span>*</span></label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter Your Email"
+                    required>
+            </div>
+
+            <div class="col-lg-6">
+                <label for="phone">Phone Number <span>*</span></label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                    placeholder="Enter Your Phone Number"
+                    required>
+            </div>
+
+            <div class="col-lg-6">
+                <label for="subject">Subject <span>*</span></label>
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form-control"
+                    placeholder="Enter Subject"
+                    required>
+            </div>
+
+            <div class="col-lg-12">
+                <label for="message">Your Message <span>*</span></label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    class="form-control"
+                    placeholder="Write your message here..."
+                    required></textarea>
+            </div>
+
+            <div class="col-lg-12 mt-3">
+                <button type="submit" name="submit" class="primary-btn-1 btn-hover">
+                    Send Message &nbsp; | <i class="icon-right-arrow"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+            </div>
             </div>
          </div>
       </div>
