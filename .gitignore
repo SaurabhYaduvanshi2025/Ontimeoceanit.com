@@ -1,0 +1,5 @@
+#Environemt FIle
+.env
+
+# Composer packages
+/vendor/
