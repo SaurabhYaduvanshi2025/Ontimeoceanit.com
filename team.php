@@ -452,7 +452,7 @@
                   </div>
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                      <div class="footer-widget-3">
-                        <h4 class="mb-20 footer-title">Latest Post</h4>
+                        <h4 class="mb-20 footer-title">Latest Posts</h4>
                         <ul class="blog-list">
                            <li>
                               <div class="footer-blog-post-box mb-15">
