@@ -1,14 +1,40 @@
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/admin/includes/lead_storage.php';
 
-use Dotenv\Dotenv;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Load .env file
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+// Try using vlucas/phpdotenv if it's available, otherwise parse .env manually
+if (class_exists(\Dotenv\Dotenv::class)) {
+   $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+   $dotenv->load();
+} else {
+   $envPath = __DIR__ . '/.env';
+   if (file_exists($envPath)) {
+      $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+      foreach ($lines as $line) {
+         $line = trim($line);
+         if ($line === '' || strpos($line, '#') === 0) {
+            continue;
+         }
+         if (strpos($line, '=') === false) {
+            continue;
+         }
+         list($name, $value) = explode('=', $line, 2);
+         $name = trim($name);
+         $value = trim($value);
+         if (strlen($value) >= 2 &&
+            (($value[0] === '"' && substr($value, -1) === '"') || ($value[0] === "'" && substr($value, -1) === "'"))) {
+            $value = substr($value, 1, -1);
+         }
+         $_ENV[$name] = $value;
+         putenv("$name=$value");
+      }
+   }
+}
 
 if (isset($_POST['submit'])) {
 
@@ -18,8 +44,14 @@ if (isset($_POST['submit'])) {
     $subject = trim($_POST['subject']);
     $message = trim($_POST['message']);
 
-
-
+    save_lead([
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+        'subject' => $subject,
+        'message' => $message,
+        'status' => 'new'
+    ]);
 
     $mail = new PHPMailer(true);
 

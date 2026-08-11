@@ -1,5 +1,12 @@
-#Environemt FIle
+# Environment / secrets
 .env
 
-# Composer packages
+# Composer dependencies
 /vendor/
+
+# Logs
+*.log
+hts-log.txt
+
+# Private admin data
+/admin/data/
