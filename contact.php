@@ -36,6 +36,22 @@ if (class_exists(\Dotenv\Dotenv::class)) {
    }
 }
 
+function get_mail_config_value(string $key, string $default = ''): string
+{
+    $value = getenv($key);
+    if ($value === false || $value === '') {
+        $value = $_ENV[$key] ?? $default;
+    }
+
+    return trim((string) $value);
+}
+
+function is_placeholder_mail_value(string $value): bool
+{
+    $value = strtolower(trim($value));
+    return $value === '' || strpos($value, 'your') !== false || strpos($value, 'example') !== false || strpos($value, 'changeme') !== false || strpos($value, 'password') !== false;
+}
+
 if (isset($_POST['submit'])) {
 
     $name = trim($_POST['name']);
@@ -53,38 +69,37 @@ if (isset($_POST['submit'])) {
         'status' => 'new'
     ]);
 
+    $mailHost = get_mail_config_value('MAIL_HOST');
+    $mailUsername = get_mail_config_value('MAIL_USERNAME');
+    $mailPassword = get_mail_config_value('MAIL_PASSWORD');
+    $mailPort = (int) get_mail_config_value('MAIL_PORT', '587');
+    $mailFrom = get_mail_config_value('MAIL_FROM', $mailUsername);
+    $mailFromName = get_mail_config_value('MAIL_FROM_NAME', 'Website Contact');
+
+    if ($mailHost === '' || $mailUsername === '' || $mailPassword === '' || is_placeholder_mail_value($mailHost) || is_placeholder_mail_value($mailUsername) || is_placeholder_mail_value($mailPassword) || $mailPort <= 0) {
+        echo 'Thank you! Your request was saved, but email delivery is not enabled because the SMTP credentials are not configured correctly. Please update the mail settings in the .env file.';
+        exit;
+    }
+
     $mail = new PHPMailer(true);
 
-try {
-
-    // SMTP Configuration
-    $mail->isSMTP();
-    $mail->Host       = $_ENV['MAIL_HOST'];
-    $mail->SMTPAuth   = true;
-    $mail->Username   = $_ENV['MAIL_USERNAME'];
-    $mail->Password   = $_ENV['MAIL_PASSWORD'];
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = $_ENV['MAIL_PORT'];
+    try {
+        $mail->isSMTP();
+        $mail->Host = $mailHost;
+        $mail->SMTPAuth = true;
+        $mail->Username = $mailUsername;
+        $mail->Password = $mailPassword;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = $mailPort;
 
 
 
-    // Sender
-$mail->setFrom($_ENV['MAIL_FROM'], $_ENV['MAIL_FROM_NAME']);
-
-// Receiver (jis email par contact form ki mail aayegi)
-$mail->addAddress($_ENV['MAIL_USERNAME']);
-
-// Reply-To (user ko reply karne ke liye)
-$mail->addReplyTo($email, $name);
-
-// Email Format
-$mail->isHTML(true);
-
-// Subject
-$mail->Subject = $subject;
-
-// Email Body
-$mail->Body = "
+        $mail->setFrom($mailFrom, $mailFromName);
+        $mail->addAddress($mailUsername);
+        $mail->addReplyTo($email, $name);
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = "
 <h2>New Contact Form Submission</h2>
 
 <p><strong>Name:</strong> {$name}</p>
@@ -97,9 +112,7 @@ $mail->Body = "
 
 <p><strong>Message:</strong><br>{$message}</p>
 ";
-
-// Plain Text Version
-$mail->AltBody = "
+        $mail->AltBody = "
 Name: $name
 
 Email: $email
@@ -112,14 +125,12 @@ Message:
 $message
 ";
 
-// Send Email
-$mail->send();
-
-echo "Email sent successfully!";
-
-} catch (Exception $e) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-}
+        $mail->send();
+        echo 'Email sent successfully!';
+    } catch (Exception $e) {
+        error_log('Contact form mail failed: ' . $e->getMessage());
+        echo 'Your request was saved, but the email could not be sent. Please verify your SMTP credentials, especially your Gmail app password.';
+    }
 
 }
 

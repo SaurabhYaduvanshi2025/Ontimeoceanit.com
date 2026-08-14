@@ -143,95 +143,21 @@
    <div class="small-container">
       <div class="row g-4">
          <!-- block -->
+         
+         <!-- block -->
+         <!-- block -->
          <div class="col-xxl-4 col-xl-4 col-lg-6 mb-15">
-            <div class="blog-style-one">
-               <a class="blog-image w-img" href="blog-details.html">
-                  <img src="assets/imgs/blog/blog-1.jpg" alt="">
-               </a>
-               <div class="blog-content">
-                  <div class="post-meta">
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-user"></i> By Admin</a></span>
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-calendar-alt"></i>28 Nov, 2024</a></span>
-                  </div>
-                  <hr>
-                  <h5 class="blog-title mb-30"><a href="blog-details.html">Necessity May Give us Best Virtual Court</a></h5>
-                  <div class="blog-link">
-                     <a class="primary-btn-5 btn-hover" href="blog-details.html">
-                        Read MORE &nbsp; | <i class="icon-right-arrow"></i>
-                        <span style="top: 147.172px; left: 108.5px;"></span>
-                     </a>
-                  </div>
-               </div>
-            </div>
+            
          </div>
          <!-- block -->
          <!-- block -->
          <div class="col-xxl-4 col-xl-4 col-lg-6 mb-15">
-            <div class="blog-style-one">
-               <a class="blog-image w-img" href="blog-details.html">
-                  <img src="assets/imgs/blog/blog-2.jpg" alt="">
-               </a>
-               <div class="blog-content">
-                  <div class="post-meta">
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-user"></i> By Admin</a></span>
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-calendar-alt"></i>28 Nov, 2024</a></span>
-                  </div>
-                  <hr>
-                  <h5 class="blog-title mb-30"><a href="blog-details.html">Tackling the Changes of Retail Industry</a></h5>
-                  <div class="blog-link">
-                     <a class="primary-btn-5 btn-hover" href="blog-details.html">
-                        Read MORE &nbsp; | <i class="icon-right-arrow"></i>
-                        <span style="top: 147.172px; left: 108.5px;"></span>
-                     </a>
-                  </div>
-               </div>
-            </div>
+            
          </div>
          <!-- block -->
          <!-- block -->
          <div class="col-xxl-4 col-xl-4 col-lg-6 mb-15">
-            <div class="blog-style-one">
-               <a class="blog-image w-img" href="blog-details.html">
-                  <img src="assets/imgs/blog/blog-3.jpg" alt="">
-               </a>
-               <div class="blog-content">
-                  <div class="post-meta">
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-user"></i> By Admin</a></span>
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-calendar-alt"></i>28 Nov, 2024</a></span>
-                  </div>
-                  <hr>
-                  <h5 class="blog-title mb-30"><a href="blog-details.html">Easy and Most Powerful Server and Platform</a></h5>
-                  <div class="blog-link">
-                     <a class="primary-btn-5 btn-hover" href="blog-details.html">
-                        Read MORE &nbsp; | <i class="icon-right-arrow"></i>
-                        <span style="top: 147.172px; left: 108.5px;"></span>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- block -->
-         <!-- block -->
-         <div class="col-xxl-4 col-xl-4 col-lg-6 mb-15">
-            <div class="blog-style-one">
-               <a class="blog-image w-img" href="blog-details.html">
-                  <img src="assets/imgs/blog/blog-5.jpg" alt="">
-               </a>
-               <div class="blog-content">
-                  <div class="post-meta">
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-user"></i> By Admin</a></span>
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-calendar-alt"></i>28 Nov, 2024</a></span>
-                  </div>
-                  <hr>
-                  <h5 class="blog-title mb-30"><a href="blog-details.html">Keep Your Business Safe & Ensure High Availability.</a></h5>
-                  <div class="blog-link">
-                     <a class="primary-btn-5 btn-hover" href="blog-details.html">
-                        Read MORE &nbsp; | <i class="icon-right-arrow"></i>
-                        <span style="top: 147.172px; left: 108.5px;"></span>
-                     </a>
-                  </div>
-               </div>
-            </div>
+            <!--  -->
          </div>
          <!-- block -->
          <!-- block -->
@@ -259,51 +185,12 @@
          <!-- block -->
          <!-- block -->
          <div class="col-xxl-4 col-xl-4 col-lg-6 mb-15">
-            <div class="blog-style-one">
-               <a class="blog-image w-img" href="blog-details.html">
-                  <img src="assets/imgs/blog/blog-7.jpg" alt="">
-               </a>
-               <div class="blog-content">
-                  <div class="post-meta">
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-user"></i> By Admin</a></span>
-                     <span class="p-relative"><a href="blog-details.html"><i class="fal fa-calendar-alt"></i>28 Nov, 2024</a></span>
-                  </div>
-                  <hr>
-                  <h5 class="blog-title mb-30"><a href="blog-details.html">What’s the Holding Back the It Solution</a></h5>
-                  <div class="blog-link">
-                     <a class="primary-btn-5 btn-hover" href="blog-details.html">
-                        Read MORE &nbsp; | <i class="icon-right-arrow"></i>
-                        <span style="top: 147.172px; left: 108.5px;"></span>
-                     </a>
-                  </div>
-               </div>
-            </div>
+            
          </div>
          <!-- block -->
       </div>
       <div class="row">
-         <div class="col-xxl-12">
-            <div class="pagination__wrapper mt-50">
-               <div class="bd-basic__pagination d-flex align-items-center justify-content-center">
-                  <nav>
-                     <ul>
-                        <li>
-                           <a href="#">1</a>
-                        </li>
-                        <li>
-                           <a href="#">2</a>
-                        </li>
-                        <li class="current">
-                           <a href="#">3</a>
-                        </li>
-                        <li>
-                           <a href="#"><i class="far fa-arrow-right"></i></a>
-                        </li>
-                     </ul>
-                  </nav>
-               </div>
-            </div>
-         </div>
+         
       </div>
    </div>
   </section>

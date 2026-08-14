@@ -46,6 +46,7 @@ $leads = array_reverse($leads);
             <nav>
                 <a href="dashboard.php">Dashboard</a>
                 <a class="active" href="leads.php">Leads</a>
+                <a href="blogs.php">Blog</a>
                 <a href="logout.php">Logout</a>
             </nav>
         </aside>

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/lead_storage.php';
+require_once __DIR__ . '/includes/blog_storage.php';
 require_admin_login();
 
 $leads = load_leads();
@@ -13,6 +14,7 @@ foreach ($leads as $lead) {
     }
 }
 $recentLeads = array_slice($leads, 0, 5);
+$blogCount = count(load_blogs());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,6 +65,7 @@ $recentLeads = array_slice($leads, 0, 5);
             <nav>
                 <a class="active" href="dashboard.php">Dashboard</a>
                 <a href="leads.php">Leads</a>
+                <a href="blogs.php">Blog</a>
                 <a href="logout.php">Logout</a>
             </nav>
         </aside>
@@ -87,6 +90,14 @@ $recentLeads = array_slice($leads, 0, 5);
                     <div class="stat-card">
                         <h3>New Leads</h3>
                         <p><?= $newCount ?></p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Blog Posts</h3>
+                        <p><?= $blogCount ?></p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Quick Action</h3>
+                        <p><a href="blogs.php" style="font-size:16px; color:#2563eb; text-decoration:none;">Create Blog</a></p>
                     </div>
                 </div>
 

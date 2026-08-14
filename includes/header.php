@@ -38,7 +38,7 @@
                                     </ul> -->
                                  </li>                           
                                  <li class="has-dropdown">
-                                    <a href="blog-grid.php">Blogs</a>
+                                    <a href="blog.php">Blogs</a>
                                     <!-- <ul class="submenu">
                                        <li class="has-dropdown"><a href="projects.php">Projects</a>
                                           <ul class="submenu">

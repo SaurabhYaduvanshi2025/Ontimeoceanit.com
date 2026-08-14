@@ -10,3 +10,6 @@ hts-log.txt
 
 # Private admin data
 /admin/data/
+
+#uploads/
+/uploads/
