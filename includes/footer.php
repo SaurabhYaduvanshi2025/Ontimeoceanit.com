@@ -19,7 +19,7 @@
                         <div class="working-hours">
                            <h6 class="text-white mb-20">Working Hours:</h6>
                            <ul class="text-white">
-                              <li>Mon - Sat: <span class="fw-lighter">10.00AM - 4.00PM</span></li>
+                              <li>Mon - Sat: <span class="fw-lighter">10.00AM - 6.00PM</span></li>
                               <li>Sunday: <span class="fw-lighter">Close</span></li>
                            </ul>
                         </div>
@@ -29,11 +29,10 @@
                      <div class="footer-widget-2 pl-50">
                         <h4 class="mb-30 footer-title">Quick Links</h4>
                         <ul class="service-list">
-                           <li><a href="about.html">About Us</a></li>
-                           <li><a href="team.html">Our Team</a></li>
-                           <li><a href="services.html">Our Services</a></li>
-                           <li><a href="blog-grid.html">Latest Blog</a></li>
-                           <li><a href="contact.html">Contact Us</a></li>
+                           <li><a href="about-us.php">About Us</a></li>
+                           <li><a href="service    .php">Our Services</a></li>
+                           <li><a href="blog.php">Latest Blog</a></li>
+                           <li><a href="contact.php">Contact Us</a></li>
                         </ul>
                      </div>
                   </div>
