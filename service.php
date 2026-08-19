@@ -5,7 +5,7 @@
 <head>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Wotech - IT Service HTML Template</title>
+   <title>Ontimeoceanit - IT Service HTML Template</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -592,200 +592,24 @@
                   <!-- block -->
                   <div class="service-slider-area p-relative">
                      <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
+                        <img src="assets/imgs/service/websitedev.png" alt="">
                      </figure>
                      <div class="content">
                         <div class="icon-box">
                            <img src="assets/imgs/icon/icon-3.png" alt="img">
                         </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
+                        <h4 class="mb-15"><a href="service-details.php?service=website-development">Website Development</a></h4>
+                        <p class="mb-25">Delivering a flawless web product requires a structured, iterative engineering workflow that prevents scope creep and ensures absolute alignment with your strategic vision. The journey begins with comprehensive discovery and wireframing, where our technical architects map user journeys, establish information architecture, and create interactive UI/UX prototypes.</p>
+                        <a href="service-details.php?service=website-development" class="service-btn">Read More <i
                               class="icon-arrow-right-double"></i></a>
                      </div>
                   </div>
                </div>
-               <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
-              <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
-              <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
-              <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
-              <div class="col-xxl-4 col-xl-4 col-lg-4 mb-15">
-                  <!-- block -->
-                  <div class="service-slider-area p-relative">
-                     <figure class="image w-img">
-                        <img src="assets/imgs/service/databasesecurity.png" alt="">
-                     </figure>
-                     <div class="content">
-                        <div class="icon-box">
-                           <img src="assets/imgs/icon/icon-3.png" alt="img">
-                        </div>
-                        <h4 class="mb-15"><a href="service-details.php?service=peripheral-devices">Any periferal devices
-                              Availbe here.</a></h4>
-                        <p class="mb-25">Complete your tech setup with our wide selection of reliable peripheral
-                           devices. We supply and configure essential office and gaming accessories, including
-                           high-resolution monitors, ergonomic keyboards and mice, external storage drives, network
-                           adapters, and printers. We ensure every peripheral integrates seamlessly with your existing
-                           IT setup.</p>
-                        <a href="service-details.php?service=peripheral-devices" class="service-btn">Read More <i
-                              class="icon-arrow-right-double"></i></a>
-                     </div>
-                  </div>
-               </div>
+               
+               
+               
+              
+                             
 
 
             </div>

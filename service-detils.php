@@ -971,6 +971,51 @@ Provide preventive maintenance, configuration assistance, troubleshooting, and l
         'With extensive experience in enterprise IT infrastructure, OntimeOceanIT helps organizations select the right peripheral devices that match their operational requirements and business goals. Our team focuses on delivering high-quality products, professional installation, seamless integration, and dependable technical support to minimize downtime and maximize productivity. Whether you are setting up a new office, upgrading your existing workplace, or expanding your IT infrastructure, our Peripheral Device solutions provide the reliability, flexibility, and performance your business needs to operate efficiently.'
     ]
 ],
+'website-development' => [
+    'title' => 'Website Development',
+    'image' => 'assets/imgs/service/websitedev.png',
+
+    'intro' => 'In today s digital-first economy, a high-performing website is the central hub of your brand identity, customer engagement, and revenue generation. At Ontime Ocean IT, we craft fast, secure, and scalable web solutions tailored to elevate your business presence. Whether you need a dynamic corporate website, a high-converting e-commerce platform, or a complex custom web application, our development team combines clean coding standards, intuitive UI/UX design, and modern web architectures to deliver digital experiences that engage users and drive measurable business results.',
+    'features' => [
+      '✔ Custom Full-Stack Web Development
+Build tailored, high-performance web applications using modern front-end and back-end technologies engineered for scale.',
+
+    '✔ Fully Responsive & Mobile-First Design
+Ensure pixel-perfect layouts, fluid touch interactions, and seamless user experiences across smartphones, tablets, and desktops.',
+
+    '✔ High-Converting E-Commerce Platforms
+Develop secure online stores with product management, shopping carts, payment gateway integrations, and order tracking systems.',
+
+    '✔ Modern UI/UX Design & Prototyping
+Create intuitive navigation architectures, engaging visual interfaces, and user-centric workflows that maximize visitor retention.',
+
+    '✔ CMS Integration & Customization
+Implement flexible Content Management Systems like WordPress or custom headless setups for effortless content and media updates.',
+
+    '✔ Database Architecture & API Integration
+Design robust relational and NoSQL database schemas alongside RESTful/GraphQL APIs for seamless third-party service connections.',
+
+    '✔ Speed Optimization & Performance Tuning
+Optimize asset delivery, minify code, implement smart caching, and achieve top Google Core Web Vitals scores for instant page loads.',
+
+    '✔ On-Page SEO & Semantic HTML Structuring
+Structure clean, semantic code with dynamic meta tags, schema markups, and fast crawlability to rank higher on search engines.',
+
+    '✔ Enterprise-Grade Web Security
+Deploy SSL certificates, firewall protections, cross-site scripting (XSS) defenses, and data encryption to safeguard critical assets.',
+
+    '✔ Maintenance, Bug Fixes & Ongoing Support
+Provide regular security updates, automated backups, performance monitoring, and reliable technical support to ensure 100% uptime.'
+    ],
+
+    'details' => [
+        'A website is no longer just a digital business card; it is the core engine of brand identity, customer acquisition, and commercial scalability. In a digital-first marketplace, potential clients evaluate the authority, reliability, and security of an enterprise based entirely on its web presence. A slow, outdated, or poorly structured website drives users directly to competitors, damages search engine rankings, and stifles revenue generation. Conversely, an optimized, modern web platform establishes instant trust, automates customer journeys, and operates as a round-the-clock sales and operational hub. At Ontime Ocean IT, we specialize in delivering enterprise-grade web development solutions engineered to solve real business challenges. Our development philosophy merges cutting-edge full-stack technologies, user-centric interface design, performance optimization, and robust security protocols to build scalable digital assets that grow alongside your business..',
+
+        'Every digital platform engineered by Ontime Ocean IT is built upon four foundational pillars: performance, responsiveness, search engine visibility, and security. Modern consumers demand instant gratification; therefore, we implement advanced code-splitting, smart server-side caching, asset minification, and Content Delivery Network (CDN) integration to ensure page loads within fractions of a second. Because more than half of global web traffic originates from mobile devices, our interfaces follow strict mobile-first design principles, ensuring fluid touch gestures, adaptable typography, and responsive layouts across all screen resolutions. Furthermore, we construct clean, semantic HTML markup, structured JSON-LD schemas, and dynamic metadata architectures that make your platform effortlessly indexable by search engine crawlers. To protect your brand reputation and user data, we integrate multi-tiered security measures, including SSL encryption, protection against SQL injection and Cross-Site Scripting (XSS), automated database backups, and strict API rate limiting.'
+   ]
+
+],
+
 ];
 
 $slug = isset($_GET['service']) ? strtolower(trim($_GET['service'])) : 'it-services';
@@ -1280,7 +1325,15 @@ $services = [
       'intro' => 'We provide dependable peripherals that improve comfort, productivity, and overall workstation performance.',
       'features' => ['Monitors and accessories', 'Printers and storage', 'Office equipment setup'],
       'details' => ['We help you choose accessories that connect cleanly with your existing system.', 'The right devices make day-to-day work more efficient and more enjoyable.']
+   ],
+      'Website Development' => [
+      'title' => 'Website Development',
+      'image' => 'assets/imgs/service/websitedev.png  ',
+      'intro' => 'We assist businesses in registering their companies with the appropriate government authorities, ensuring compliance with legal requirements and smooth incorporation.',
+      'features' => ['Monitors and accessories', 'Printers and storage', 'Office equipment setup'],
+      'details' => ['We help you choose accessories that connect cleanly with your existing system.', 'The right devices make day-to-day work more efficient and more enjoyable.']
    ]
+
 ];
 
 $slug = isset($_GET['service']) ? strtolower(trim($_GET['service'])) : 'it-services';
