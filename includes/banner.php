@@ -3,7 +3,7 @@
       <div class="swiper-wrapper">
          <!-- block -->
          <div class="swiper-slide"> 
-            <div class="banner-main-2" data-background="assets/imgs/banner/banner-3.jpg">
+            <div class="banner-main-2" data-background="assets/imgs/banner/pic11.png">
                <div class="large-container">               
                   <div class="banner-area-2 p-relative z-3 wow img-custom-anim-left animated" data-wow-delay="1000ms">
                      <span class="p-relative banner-sub-title">Best it SOULTION Provider</span>
@@ -45,7 +45,7 @@
          </div>
          <!-- block -->
          <div class="swiper-slide"> 
-            <div class="banner-main-2" data-background="assets/imgs/banner/banner-3.jpg">
+            <div class="banner-main-2" data-background="assets/imgs/banner/pic12.png">
                <div class="large-container">               
                   <div class="banner-area-2 p-relative z-3 wow img-custom-anim-left animated" data-wow-delay="3000ms">
                      <span class="p-relative banner-sub-title">Best it SOULTION Provider</span>
@@ -87,7 +87,7 @@
          </div>
          <!-- block -->
          <div class="swiper-slide"> 
-            <div class="banner-main-2" data-background="assets/imgs/banner/banner-3.jpg">
+            <div class="banner-main-2" data-background="assets/imgs/banner/pic13.png">
                <div class="large-container">               
                   <div class="banner-area-2 p-relative z-3 wow img-custom-anim-left animated" data-wow-delay="3000ms">
                      <span class="p-relative banner-sub-title">Best it SOULTION Provider</span>

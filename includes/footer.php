@@ -40,11 +40,11 @@
                      <div class="footer-widget-2 pl-50">
                         <h4 class="mb-30 footer-title">Our Services</h4>
                         <ul class="service-list">
-                           <li><a href="service-details.html">IT Management</a></li>
-                           <li><a href="service-details.html">SEO Optimization</a></li>
-                           <li><a href="service-details.html">Web Development</a></li>
-                           <li><a href="service-details.html">Cyber Security</a></li>
-                           <li><a href="service-details.html">Data Security</a></li>
+                           <li><a href="service-details.php?service=database-security">Database Security</a></li>
+                           <li><a href="service-details.php?service=institution-solutions">Institution Solutions</a></li>
+                           <li><a href="service-details.php?service=it-services">IT Services</a></li>
+                           <li><a href="service-details.php?service=cyber-security">Cyber Security</a></li>
+                           <li><a href="service-details.php?service=data-security">Data Security</a></li>
                         </ul>
                      </div>
                   </div>
