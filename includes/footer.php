@@ -82,7 +82,7 @@
                   <span><a href="#"><i class="fab fa-youtube"></i></a></span>
                </div>
                <div class="right-area p-relative">
-                  <span><a href="#">Designed & Developed by  <strong>Saurabh Yadav</strong></a></span>
+                  <span><a href="https://protfolio-gilt-chi.vercel.app/">Designed & Developed by  <strong>Saurabh Yadav</strong></a></span>
                   <!-- <span><a href="#">Privacy Policy</a></span> -->
                </div>
             </div> 

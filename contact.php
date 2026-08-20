@@ -52,6 +52,10 @@ function is_placeholder_mail_value(string $value): bool
     return $value === '' || strpos($value, 'your') !== false || strpos($value, 'example') !== false || strpos($value, 'changeme') !== false || strpos($value, 'password') !== false;
 }
 
+// Flash message variables to show result inside the form
+$contact_message = '';
+$contact_message_type = ''; // 'success', 'danger', 'warning', etc.
+
 if (isset($_POST['submit'])) {
 
     $name = trim($_POST['name']);
@@ -76,14 +80,16 @@ if (isset($_POST['submit'])) {
     $mailFrom = get_mail_config_value('MAIL_FROM', $mailUsername);
     $mailFromName = get_mail_config_value('MAIL_FROM_NAME', 'Website Contact');
 
-    if ($mailHost === '' || $mailUsername === '' || $mailPassword === '' || is_placeholder_mail_value($mailHost) || is_placeholder_mail_value($mailUsername) || is_placeholder_mail_value($mailPassword) || $mailPort <= 0) {
-        echo 'Thank you! Your request was saved, but email delivery is not enabled because the SMTP credentials are not configured correctly. Please update the mail settings in the .env file.';
-        exit;
-    }
+   $mailEnabled = true;
+   if ($mailHost === '' || $mailUsername === '' || $mailPassword === '' || is_placeholder_mail_value($mailHost) || is_placeholder_mail_value($mailUsername) || is_placeholder_mail_value($mailPassword) || $mailPort <= 0) {
+      $contact_message = 'Thank you! Your request was saved, but email delivery is not enabled because the SMTP credentials are not configured correctly. Please update the mail settings in the .env file.';
+      $contact_message_type = 'warning';
+      $mailEnabled = false;
+   }
 
     $mail = new PHPMailer(true);
 
-    try {
+   try {
         $mail->isSMTP();
         $mail->Host = $mailHost;
         $mail->SMTPAuth = true;
@@ -125,11 +131,17 @@ Message:
 $message
 ";
 
-        $mail->send();
-        echo 'Email sent successfully!';
+      if ($mailEnabled) {
+         $mail->send();
+         $contact_message = 'Email sent successfully!';
+         $contact_message_type = 'success';
+      }
     } catch (Exception $e) {
         error_log('Contact form mail failed: ' . $e->getMessage());
-        echo 'Your request was saved, but the email could not be sent. Please verify your SMTP credentials, especially your Gmail app password.';
+      if ($contact_message === '') {
+         $contact_message = 'Your request was saved, but the email could not be sent. Please verify your SMTP credentials, especially your Gmail app password.';
+         $contact_message_type = 'danger';
+      }
     }
 
 }
@@ -381,10 +393,19 @@ $message
                     required></textarea>
             </div>
 
+            <?php if (!empty($contact_message)): ?>
+            <div class="col-lg-12 mt-2">
+               <div class="alert alert-<?php echo htmlspecialchars($contact_message_type ?: 'info'); ?> alert-dismissible fade show" role="alert" style="border-radius:12px;">
+                  <?php echo htmlspecialchars($contact_message); ?>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            </div>
+            <?php endif; ?>
+
             <div class="col-lg-12 mt-3">
-                <button type="submit" name="submit" class="primary-btn-1 btn-hover">
-                    Send Message &nbsp; | <i class="icon-right-arrow"></i>
-                </button>
+               <button type="submit" name="submit" class="primary-btn-1 btn-hover">
+                  Send Message &nbsp; | <i class="icon-right-arrow"></i>
+               </button>
             </div>
 
         </div>
