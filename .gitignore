@@ -13,3 +13,6 @@ hts-log.txt
 
 #uploads/
 /uploads/
+
+#configuration files
+/config/databse.php

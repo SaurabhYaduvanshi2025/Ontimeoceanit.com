@@ -15,11 +15,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$adminConfig = [
-    'username' => getenv('ITWEB_ADMIN_USERNAME') ?: 'admin',
-    'password_hash' => getenv('ITWEB_ADMIN_PASSWORD_HASH') ?: '$2y$12$IvpPZmbQ.xY8QlsubUiWC.V5hYzFbZJ0jJGFbZrYcRfytBEW91N/m'
-];
-
 function generate_admin_csrf_token(): string
 {
     if (empty($_SESSION['admin_csrf_token'])) {

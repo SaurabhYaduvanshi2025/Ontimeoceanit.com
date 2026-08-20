@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/blog_storage.php';
+require_once __DIR__ . '/../config/database.php';
 require_admin_login();
-
 $message = '';
 $errors = [];
 
@@ -23,24 +23,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (empty($errors)) {
-            $blog = [
-                'title' => $title,
-                'slug' => $slug ?: $title,
-                'meta_title' => $meta_title ?: $title,
-                'meta_description' => $meta_description,
-                'content' => $content,
-                'image' => $imagePath,
-                'status' => 'published',
-                'created_at' => date('Y-m-d H:i:s')
-            ];
+            $blogSlug = $slug ?: $title;
+$blogMetaTitle = $meta_title ?: $title;
 
-            save_blog($blog);
-            $message = 'Blog post created successfully.';
+$stmt = $pdo->prepare(
+    'INSERT INTO blogs
+    (title, slug, meta_title, meta_description, content, image, status)
+    VALUES
+    (?, ?, ?, ?, ?, ?, ?)'
+);
+
+$stmt->execute([
+    $title,
+    $blogSlug,
+    $blogMetaTitle,
+    $meta_description,
+    $content,
+    $imagePath,
+    'published'
+]);
+
+$message = 'Blog post created successfully.';
         }
     }
 }
 
-$blogs = load_blogs();
+$stmt = $pdo->query(
+    'SELECT id, title, slug, meta_title, meta_description, content, image, status, created_at, updated_at
+     FROM blogs
+     ORDER BY created_at DESC'
+);
+
+$blogs = $stmt->fetchAll();
+
 $csrfToken = generate_admin_csrf_token();
 ?>
 <!DOCTYPE html>

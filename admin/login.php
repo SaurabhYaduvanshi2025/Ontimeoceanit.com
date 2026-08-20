@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/../config/database.php';
 
 $errorMessage = '';
 
@@ -12,14 +13,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errorMessage = 'Invalid security token. Please try again.';
     } elseif ($username === '' || $password === '') {
         $errorMessage = 'Please enter both username and password.';
-    } elseif ($username === $adminConfig['username'] && password_verify($password, $adminConfig['password_hash'])) {
-        session_regenerate_id(true);
-        $_SESSION['admin_authenticated'] = true;
-        $_SESSION['admin_username'] = $username;
-        header('Location: dashboard.php');
-        exit;
     } else {
-        $errorMessage = 'Invalid username or password.';
+        try {
+            $stmt = $pdo->prepare('SELECT id, username, password_hash FROM admins WHERE username = ? LIMIT 1');
+            $stmt->execute([$username]);
+            $admin = $stmt->fetch();
+
+            if ($admin && password_verify($password, $admin['password_hash'])) {
+                session_regenerate_id(true);
+                $_SESSION['admin_authenticated'] = true;
+                $_SESSION['admin_id'] = $admin['id'];
+                $_SESSION['admin_username'] = $admin['username'];
+                header('Location: dashboard.php');
+                exit;
+            } else {
+                $errorMessage = 'Invalid username or password.';
+            }
+        } catch (PDOException $e) {
+            error_log('Login query failed: ' . $e->getMessage());
+            $errorMessage = 'An error occurred. Please try again.';
+        }
     }
 }
 
@@ -42,6 +55,38 @@ $csrfToken = generate_admin_csrf_token();
         button:hover { background: #1d4ed8; }
         .error { background: #fee2e2; color: #b91c1c; padding: 10px; border-radius: 8px; margin-bottom: 16px; }
         .hint { margin-top: 14px; font-size: 13px; color: #6b7280; }
+        
+        /* Password toggle styles */
+        .password-container {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        
+        .password-container input {
+            width: 100%;
+            padding-right: 40px;
+            margin-bottom: 0;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280;
+            font-size: 18px;
+            padding: 4px;
+            width: auto;
+            padding: 6px 8px;
+        }
+        
+        .toggle-password:hover {
+            color: #374151;
+            background: none;
+        }
     </style>
 </head>
 <body>
@@ -57,12 +102,31 @@ $csrfToken = generate_admin_csrf_token();
                 <input type="text" id="username" name="username" required>
 
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="toggle-password" id="togglePassword" title="Show/Hide Password">👁️</button>
+                </div>
 
                 <button type="submit">Sign In</button>
             </form>
             <div class="hint">Use the administrator credentials configured for this site.</div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function(e) {
+            e.preventDefault();
+            const passwordField = document.getElementById('password');
+            const toggleBtn = document.getElementById('togglePassword');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleBtn.textContent = '👁️‍🗨️';
+            } else {
+                passwordField.type = 'password';
+                toggleBtn.textContent = '👁️';
+            }
+        });
+    </script>
 </body>
 </html>

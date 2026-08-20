@@ -1,43 +1,69 @@
 <?php
-function get_leads_storage_path(): string
-{
-    return dirname(__DIR__) . '/data/leads.json';
-}
-
-function ensure_leads_storage(): void
-{
-    $storagePath = get_leads_storage_path();
-    $storageDir = dirname($storagePath);
-
-    if (!is_dir($storageDir) && !mkdir($storageDir, 0755, true) && !is_dir($storageDir)) {
-        throw new RuntimeException('Unable to create leads storage directory.');
-    }
-
-    if (!file_exists($storagePath)) {
-        file_put_contents($storagePath, '[]', LOCK_EX);
-    }
-}
+require_once __DIR__ . '/../../config/database.php';
 
 function load_leads(): array
 {
-    ensure_leads_storage();
-
-    $contents = file_get_contents(get_leads_storage_path());
-    $data = json_decode($contents, true);
-
-    return is_array($data) ? $data : [];
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->query('SELECT * FROM leads ORDER BY created_at DESC');
+        return $stmt->fetchAll() ?: [];
+    } catch (PDOException $e) {
+        error_log('Load leads query failed: ' . $e->getMessage());
+        return [];
+    }
 }
 
-function save_lead(array $lead): void
+function save_lead(array $lead): bool
 {
-    ensure_leads_storage();
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare('
+            INSERT INTO leads (name, email, phone, subject, message, source, status, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ');
+        
+        return $stmt->execute([
+            $lead['name'] ?? '',
+            $lead['email'] ?? '',
+            $lead['phone'] ?? '',
+            $lead['subject'] ?? '',
+            $lead['message'] ?? '',
+            $lead['source'] ?? 'contact_form',
+            $lead['status'] ?? 'new',
+            $lead['created_at'] ?? date('Y-m-d H:i:s')
+        ]);
+    } catch (PDOException $e) {
+        error_log('Save lead query failed: ' . $e->getMessage());
+        return false;
+    }
+}
 
-    $leads = load_leads();
-    $lead['id'] = $lead['id'] ?? uniqid('lead_', true);
-    $lead['created_at'] = $lead['created_at'] ?? date('Y-m-d H:i:s');
-    $lead['source'] = $lead['source'] ?? 'contact_form';
+function delete_lead(int $id): bool
+{
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare('DELETE FROM leads WHERE id = ?');
+        return $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        error_log('Delete lead query failed: ' . $e->getMessage());
+        return false;
+    }
+}
 
-    $leads[] = $lead;
-
-    file_put_contents(get_leads_storage_path(), json_encode($leads, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
+function get_lead(int $id): ?array
+{
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare('SELECT * FROM leads WHERE id = ? LIMIT 1');
+        $stmt->execute([$id]);
+        $result = $stmt->fetch();
+        return $result ?: null;
+    } catch (PDOException $e) {
+        error_log('Get lead query failed: ' . $e->getMessage());
+        return null;
+    }
 }

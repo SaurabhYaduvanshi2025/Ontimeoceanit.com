@@ -1,54 +1,90 @@
 <?php
-function get_blog_storage_dir(): string
-{
-    return dirname(__DIR__) . '/data/blogs';
-}
+require_once __DIR__ . '/../../config/database.php';
 
 function get_blog_upload_dir(): string
 {
     return dirname(__DIR__) . '/uploads';
 }
 
-function ensure_blog_storage(): void
-{
-    $dir = get_blog_storage_dir();
-    if (!is_dir($dir) && !mkdir($dir, 0755, true) && !is_dir($dir)) {
-        throw new RuntimeException('Unable to create blog storage directory.');
-    }
-}
-
 function load_blogs(): array
 {
-    ensure_blog_storage();
-
-    $dir = get_blog_storage_dir();
-    $files = glob($dir . '/*.json');
-    $blogs = [];
-
-    foreach ($files as $file) {
-        $data = json_decode(file_get_contents($file), true);
-        if (is_array($data)) {
-            $blogs[] = $data;
-        }
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->query('SELECT * FROM blogs ORDER BY created_at DESC');
+        return $stmt->fetchAll() ?: [];
+    } catch (PDOException $e) {
+        error_log('Load blogs query failed: ' . $e->getMessage());
+        return [];
     }
-
-    usort($blogs, function ($a, $b) {
-        return strtotime($b['created_at'] ?? 'now') <=> strtotime($a['created_at'] ?? 'now');
-    });
-
-    return $blogs;
 }
 
-function save_blog(array $blog): void
+function save_blog(array $blog): bool
 {
-    ensure_blog_storage();
-    $slug = slugify($blog['slug'] ?? $blog['title'] ?? 'blog-post');
-    $filename = get_blog_storage_dir() . '/' . $slug . '.json';
-    $blog['slug'] = $slug;
-    $blog['created_at'] = $blog['created_at'] ?? date('Y-m-d H:i:s');
-    $blog['updated_at'] = date('Y-m-d H:i:s');
+    global $pdo;
+    
+    try {
+        $slug = slugify($blog['slug'] ?? $blog['title'] ?? 'blog-post');
+        
+        $stmt = $pdo->prepare('
+            INSERT INTO blogs (title, slug, content, image, author, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ');
+        
+        return $stmt->execute([
+            $blog['title'] ?? '',
+            $slug,
+            $blog['content'] ?? '',
+            $blog['image'] ?? null,
+            $blog['author'] ?? 'Admin',
+            $blog['created_at'] ?? date('Y-m-d H:i:s'),
+            date('Y-m-d H:i:s')
+        ]);
+    } catch (PDOException $e) {
+        error_log('Save blog query failed: ' . $e->getMessage());
+        return false;
+    }
+}
 
-    file_put_contents($filename, json_encode($blog, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
+function update_blog(int $id, array $blog): bool
+{
+    global $pdo;
+    
+    try {
+        $slug = slugify($blog['slug'] ?? $blog['title'] ?? 'blog-post');
+        
+        $stmt = $pdo->prepare('
+            UPDATE blogs 
+            SET title = ?, slug = ?, content = ?, image = ?, author = ?, updated_at = ?
+            WHERE id = ?
+        ');
+        
+        return $stmt->execute([
+            $blog['title'] ?? '',
+            $slug,
+            $blog['content'] ?? '',
+            $blog['image'] ?? null,
+            $blog['author'] ?? 'Admin',
+            date('Y-m-d H:i:s'),
+            $id
+        ]);
+    } catch (PDOException $e) {
+        error_log('Update blog query failed: ' . $e->getMessage());
+        return false;
+    }
+}
+
+function delete_blog(int $id): bool
+{
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare('DELETE FROM blogs WHERE id = ?');
+        return $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        error_log('Delete blog query failed: ' . $e->getMessage());
+        return false;
+    }
 }
 
 function slugify(string $text): string
@@ -61,13 +97,32 @@ function slugify(string $text): string
 
 function get_blog_by_slug(string $slug): ?array
 {
-    $blogs = load_blogs();
-    foreach ($blogs as $blog) {
-        if (($blog['slug'] ?? '') === $slug) {
-            return $blog;
-        }
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare('SELECT * FROM blogs WHERE slug = ? LIMIT 1');
+        $stmt->execute([$slug]);
+        $result = $stmt->fetch();
+        return $result ?: null;
+    } catch (PDOException $e) {
+        error_log('Get blog query failed: ' . $e->getMessage());
+        return null;
     }
-    return null;
+}
+
+function get_blog(int $id): ?array
+{
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare('SELECT * FROM blogs WHERE id = ? LIMIT 1');
+        $stmt->execute([$id]);
+        $result = $stmt->fetch();
+        return $result ?: null;
+    } catch (PDOException $e) {
+        error_log('Get blog query failed: ' . $e->getMessage());
+        return null;
+    }
 }
 
 function handle_blog_image_upload(array $file): ?string
