@@ -1,11 +1,32 @@
 <?php
+
+declare(strict_types=1);
+
 require_once __DIR__ . '/includes/config.php';
-require_once __DIR__ . '/includes/lead_storage.php';
+require_once __DIR__ . '/../config/database.php';
+
 require_admin_login();
 
-$leads = load_leads();
-$leads = array_reverse($leads);
+try {
+    $stmt = $pdo->query(
+        'SELECT id, name, email, phone, service, message, created_at
+         FROM leads
+         ORDER BY created_at DESC'
+    );
+
+    $leads = $stmt->fetchAll();
+
+} catch (PDOException $e) {
+
+    error_log('Lead fetch failed: ' . $e->getMessage());
+
+    $leads = [];
+    $dbError = 'Unable to load leads.';
+}
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,9 +91,8 @@ $leads = array_reverse($leads);
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Subject</th>
+                                    <th>Service</th>
                                     <th>Requirement</th>
-                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,9 +102,8 @@ $leads = array_reverse($leads);
                                         <td><?= htmlspecialchars($lead['name'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
                                         <td><?= htmlspecialchars($lead['email'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
                                         <td><?= htmlspecialchars($lead['phone'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
-                                        <td><?= htmlspecialchars($lead['subject'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
+                                        <td><?= htmlspecialchars($lead['service'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
                                         <td><?= nl2br(htmlspecialchars($lead['message'] ?? '-', ENT_QUOTES, 'UTF-8')) ?></td>
-                                        <td><span class="badge"><?= htmlspecialchars(strtoupper($lead['status'] ?? 'NEW'), ENT_QUOTES, 'UTF-8') ?></span></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

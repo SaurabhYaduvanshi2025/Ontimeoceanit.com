@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../config/database.php';
 function load_leads(): array
 {
     global $pdo;
-    
+
     try {
         $stmt = $pdo->query('SELECT * FROM leads ORDER BY created_at DESC');
         return $stmt->fetchAll() ?: [];
@@ -17,22 +17,19 @@ function load_leads(): array
 function save_lead(array $lead): bool
 {
     global $pdo;
-    
+
     try {
         $stmt = $pdo->prepare('
-            INSERT INTO leads (name, email, phone, subject, message, source, status, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO leads (name, email, phone, service, message)
+            VALUES (?, ?, ?, ?, ?)
         ');
-        
+
         return $stmt->execute([
             $lead['name'] ?? '',
             $lead['email'] ?? '',
             $lead['phone'] ?? '',
-            $lead['subject'] ?? '',
+            $lead['subject'] ?? ($lead['service'] ?? ''),
             $lead['message'] ?? '',
-            $lead['source'] ?? 'contact_form',
-            $lead['status'] ?? 'new',
-            $lead['created_at'] ?? date('Y-m-d H:i:s')
         ]);
     } catch (PDOException $e) {
         error_log('Save lead query failed: ' . $e->getMessage());
@@ -43,7 +40,7 @@ function save_lead(array $lead): bool
 function delete_lead(int $id): bool
 {
     global $pdo;
-    
+
     try {
         $stmt = $pdo->prepare('DELETE FROM leads WHERE id = ?');
         return $stmt->execute([$id]);
@@ -56,7 +53,7 @@ function delete_lead(int $id): bool
 function get_lead(int $id): ?array
 {
     global $pdo;
-    
+
     try {
         $stmt = $pdo->prepare('SELECT * FROM leads WHERE id = ? LIMIT 1');
         $stmt->execute([$id]);
