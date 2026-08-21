@@ -1,54 +1,53 @@
-
-
-
-   <footer>
-      <div class="footer-main bg-color-1 p-relative">
-         <div class="footer-shape-1" data-background="assets/imgs/footer/shape-f-1.png"></div>
-         <div class="footer-shape-2" data-background="assets/imgs/footer/shape-f-2.png"></div>
-         <div class="footer-top section-space-medium">
-            <div class="small-container">
-               <div class="row g-4">
-                  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                     <div class="footer-widget-1">
-                        <figure class="image">
-                           <img src="assets/imgs/logo/ontimelogo.png" alt="">
-                        </figure>
-                        <p class="mt-40 mb-30">
-                          Ontimeoceanit delivers reliable, scalable, and cutting-edge technology solutions to drive your digital transformation. From robust web development to seamless IT support, we manage your technology so you can focus on growing your business.
-                        </p>
-                        <div class="working-hours">
-                           <h6 class="text-white mb-20">Working Hours:</h6>
-                           <ul class="text-white">
-                              <li>Mon - Sat: <span class="fw-lighter">10.00AM - 6.00PM</span></li>
-                              <li>Sunday: <span class="fw-lighter">Close</span></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                     <div class="footer-widget-2 pl-50">
-                        <h4 class="mb-30 footer-title">Quick Links</h4>
-                        <ul class="service-list">
-                           <li><a href="about-us.php">About Us</a></li>
-                           <li><a href="service    .php">Our Services</a></li>
-                           <li><a href="blog.php">Latest Blog</a></li>
-                           <li><a href="contact.php">Contact Us</a></li>
+<footer>
+   <div class="footer-main bg-color-1 p-relative">
+      <div class="footer-shape-1" data-background="assets/imgs/footer/shape-f-1.png"></div>
+      <div class="footer-shape-2" data-background="assets/imgs/footer/shape-f-2.png"></div>
+      <div class="footer-top section-space-medium">
+         <div class="small-container">
+            <div class="row g-4">
+               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                  <div class="footer-widget-1">
+                     <figure class="image">
+                        <img src="assets/imgs/logo/ontimelogo.png" alt="">
+                     </figure>
+                     <p class="mt-40 mb-30">
+                        Ontimeoceanit delivers reliable, scalable, and cutting-edge technology solutions to drive your
+                        digital transformation. From robust web development to seamless IT support, we manage your
+                        technology so you can focus on growing your business.
+                     </p>
+                     <div class="working-hours">
+                        <h6 class="text-white mb-20">Working Hours:</h6>
+                        <ul class="text-white">
+                           <li>Mon - Sat: <span class="fw-lighter">10.00AM - 6.00PM</span></li>
+                           <li>Sunday: <span class="fw-lighter">Close</span></li>
                         </ul>
                      </div>
                   </div>
-                  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                     <div class="footer-widget-2 pl-50">
-                        <h4 class="mb-30 footer-title">Our Services</h4>
-                        <ul class="service-list">
-                           <li><a href="service-details.php?service=database-security">Database Security</a></li>
-                           <li><a href="service-details.php?service=institution-solutions">Institution Solutions</a></li>
-                           <li><a href="service-details.php?service=it-services">IT Services</a></li>
-                           <li><a href="service-details.php?service=cyber-security">Cyber Security</a></li>
-                           <li><a href="service-details.php?service=data-security">Data Security</a></li>
-                        </ul>
-                     </div>
+               </div>
+               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                  <div class="footer-widget-2 pl-50">
+                     <h4 class="mb-30 footer-title">Quick Links</h4>
+                     <ul class="service-list">
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="service    .php">Our Services</a></li>
+                        <li><a href="blog.php">Latest Blog</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
+                     </ul>
                   </div>
-                  <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+               </div>
+               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                  <div class="footer-widget-2 pl-50">
+                     <h4 class="mb-30 footer-title">Our Services</h4>
+                     <ul class="service-list">
+                        <li><a href="service-details.php?service=database-security">Database Security</a></li>
+                        <li><a href="service-details.php?service=institution-solutions">Institution Solutions</a></li>
+                        <li><a href="service-details.php?service=it-services">IT Services</a></li>
+                        <li><a href="service-details.php?service=cyber-security">Cyber Security</a></li>
+                        <li><a href="service-details.php?service=data-security">Data Security</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                      <div class="footer-widget-4 pr-30">
                         <h4 class="mb-20 footer-title mb-30">Our Gallery</h4>
                         <div class="footer-gallery p-relative">
@@ -67,37 +66,41 @@
                         </div>
                      </div>
                   </div> -->
-               </div>
             </div>
          </div>
-         <div class="small-container">
-            <div class="footer-bottom pt-30 pb-30">
-               <div class="left-area p-relative">
-                  <span>© All Copyright 2026 by <a href="#">Ontimeoceanit</a></span>
-               </div>
-               <div class="footer-socials p-relative">
-                  <span><a href="#"><i class="fab fa-facebook-f"></i></a></span>
-                  <span><a href="#"><i class="fab fa-twitter"></i></a></span>
-                  <span><a href="#"><i class="fab fa-linkedin-in"></i></a></span>
-                  <span><a href="#"><i class="fab fa-youtube"></i></a></span>
-               </div>
-               <div class="right-area p-relative">
-                  <span><a href="https://protfolio-gilt-chi.vercel.app/">Designed & Developed by  <strong>Saurabh Yadav</strong></a></span>
-                  <!-- <span><a href="#">Privacy Policy</a></span> -->
-               </div>
-            </div> 
-         </div>     
       </div>
-   </footer>
+      <div class="small-container">
+         <div class="footer-bottom pt-30 pb-30">
+            <div class="left-area p-relative">
+               <span>© All Copyright 2026 by <a href="#">Ontimeoceanit</a></span>
+            </div>
+            <div class="footer-socials p-relative">
+               <span><a href="#"><i class="fab fa-facebook-f"></i></a></span>
+               <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+               <span><a href="#"><i class="fab fa-linkedin-in"></i></a></span>
+               <span><a href="#"><i class="fab fa-youtube"></i></a></span>
+            </div>
+            <div class="right-area p-relative">
+               <span>
+                  Designed &amp; Developed by
+                  <a href="https://protfolio-gilt-chi.vercel.app/" target="_blank" rel="noopener noreferrer">
+                     <strong>Saurabh Yadav</strong>
+                  </a>
+               </span>
+               <!-- <span><a href="#">Privacy Policy</a></span> -->
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
 
-   <script src="assets/js/jquery-3.7.1.min.js"></script>
-   <script src="assets/js/waypoints.min.js"></script>
-   <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/js/meanmenu.min.js"></script>
-   <script src="assets/js/swiper.min.js"></script>
-   <script src="assets/js/slick.min.js"></script>
-   <script src="assets/js/magnific-popup.min.js"></script>
-   <script src="assets/js/counterup.js"></script>
-   <script src="assets/js/wow.js"></script>
-   <script src="assets/js/main.js"></script>
-
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/meanmenu.min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/magnific-popup.min.js"></script>
+<script src="assets/js/counterup.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/main.js"></script>

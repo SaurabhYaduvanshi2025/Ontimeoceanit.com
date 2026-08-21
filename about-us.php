@@ -159,11 +159,10 @@
                <div class="image-2-area">
                   <div class="image-2 p-relative">
                      <img src="assets/imgs/about/about-2.jpg" alt="">  
-                     <div class="play-btn">
+                     <!-- <div class="play-btn">
                         <div class="video_player_btn">
-                           <a href="https://www.youtube.com/watch?v=eEzD-Y97ges" class="popup-video"><i class="icon-play"></i></a>
                        </div>
-                     </div>                                 
+                     </div>                                  -->
                   </div>                  
                </div>
                <div class="working-area float-bob-y">
@@ -231,8 +230,7 @@
 
 
  <!-- Team area start --> 
-  <?php include 'includes/ourteam.php'; ?>
- <!-- Team area end -->> 
+ <!-- Team area end -->
 
 <div class="container-fluid g-0 fix">
    <div class="row">

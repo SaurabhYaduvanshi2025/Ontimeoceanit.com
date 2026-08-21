@@ -11,12 +11,12 @@
                   <span class="section-sub-title text-white">TALK TO US</span>
                   <h3 class="section-title mt-10 text-white">How May We Help You!</h3>
                </div>
-               <form action="#">
+               <form action="contact.php">
                   <div class="row">
                      <div class="col-lg-12">
                         <div class="contact__from-input mb-20">
                            <label>Your Name</label>
-                           <input type="text" placeholder="Ralph Edwards">
+                           <input type="text" placeholder="Mukul Sharma">
                         </div>
                      </div>
                      <div class="col-lg-6">
@@ -28,7 +28,7 @@
                      <div class="col-lg-6">
                         <label>Your Phone</label>
                         <div class="contact__from-input mb-20">
-                           <input type="tel" placeholder="+1253 457 7840">
+                           <input type="tel" placeholder="+91 1234567891">
                         </div>
                      </div>
                      <div class="col-lg-6">
