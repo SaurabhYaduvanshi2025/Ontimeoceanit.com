@@ -16,7 +16,7 @@
                      <div class="col-lg-12">
                         <div class="contact__from-input mb-20">
                            <label>Your Name</label>
-                           <input type="text" placeholder="Mukul Sharma">
+                           <input type="text" placeholder="Mukul Sharmalo">
                         </div>
                      </div>
                      <div class="col-lg-6">

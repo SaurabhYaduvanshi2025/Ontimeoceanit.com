@@ -99,7 +99,7 @@
                      </button>
                   </div>
                </div>
-               <div class="mobile-menu fix mb-40"></div>
+               <div class="mobile-menu-2 fix mb-40"></div>
             </div>
          </div>
       </div>
@@ -138,7 +138,7 @@
                   <div class="header-right d-flex justify-content-end">
                      <div class="mean__menu-wrapper d-none d-lg-block">
                         <div class="main-menu">
-                           <nav id="mobile-menu">
+                           <nav id="mobile-menu-2">
                               <ul>
                                  <li class="has-dropdown">
                                     <a href="index.html">Home</a>

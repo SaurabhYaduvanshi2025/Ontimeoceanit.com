@@ -60,46 +60,47 @@
 	button hover
 	========================================*/
 	$('.btn-hover').on('mouseenter', function(e) {
-        var parentOffset = $(this).offset(),
-            relX = e.pageX - parentOffset.left,
-            relY = e.pageY - parentOffset.top;
-        $(this).find('span').css({
-            top: 0,
-            left: 0
-        })
-        $(this).find('span').css({
-            top: relY,
-            left: relX
-        })
-    }).on('mouseout', function(e) {
-        var parentOffset = $(this).offset(),
-            relX = e.pageX - parentOffset.left,
-            relY = e.pageY - parentOffset.top;
-        $(this).find('span').css({
-            top: 0,
-            left: 0
-        })
-        $(this).find('span').css({
-            top: relY,
-            left: relX
-        })
-    });
-
+		var parentOffset = $(this).offset(),
+			relX = e.pageX - parentOffset.left,
+			relY = e.pageY - parentOffset.top;
+		$(this).find('span').css({
+			top: 0,
+			left: 0
+		})
+		$(this).find('span').css({
+			top: relY,
+			left: relX
+		})
+	}).on('mouseout', function(e) {
+		var parentOffset = $(this).offset(),
+			relX = e.pageX - parentOffset.left,
+			relY = e.pageY - parentOffset.top;
+		$(this).find('span').css({
+			top: 0,
+			left: 0
+		})
+		$(this).find('span').css({
+			top: relY,
+			left: relX
+		})
+	});
 
 	/*======================================
-	Mobile Menu Js
+	Mobile Menu Js - initialize only one to avoid duplicates
 	========================================*/
-	$('#mobile-menu').meanmenu({
-		meanMenuContainer: '.mobile-menu',
-		meanScreenWidth: "991",
-		meanExpand: ['<i class="fal fa-plus"></i>'],
-	});
-
-	$("#mobile-menu-2").meanmenu({
-		meanMenuContainer: ".mobile-menu-2",
-		meanScreenWidth: "4000",
-		meanExpand: ['<i class="fal fa-plus"></i>'],
-	});
+	if ($('#mobile-menu').length) {
+		$('#mobile-menu').meanmenu({
+			meanMenuContainer: '.mobile-menu',
+			meanScreenWidth: "991",
+			meanExpand: ['<i class="fal fa-plus"></i>'],
+		});
+	} else if ($('#mobile-menu-2').length) {
+		$("#mobile-menu-2").meanmenu({
+			meanMenuContainer: ".mobile-menu-2",
+			meanScreenWidth: "4000",
+			meanExpand: ['<i class="fal fa-plus"></i>'],
+		});
+	}
 
 	/*======================================
 	Sidebar Toggle

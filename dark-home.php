@@ -102,7 +102,7 @@
                <div class="offcanvas__search mb-25">
                   <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum maxime accusamus corrupti natus obcaecati vitae dignissimos, id officiis similique eos.</p>
                </div>
-               <div class="mobile-menu fix mb-40"></div>
+               <div class="mobile-menu-2 fix mb-40"></div>
                <div class="offcanvas__contact mt-30 mb-20">
                   <h4>Contact Info</h4>
                   <ul>
@@ -165,7 +165,7 @@
                   <div class="header-right d-flex justify-content-end">
                      <div class="mean__menu-wrapper d-none d-lg-block">
                         <div class="main-menu">
-                           <nav id="mobile-menu">
+                           <nav id="mobile-menu-2">
                               <ul>
                                  <li class="has-dropdown active">
                                     <a href="index.html">Home</a>
