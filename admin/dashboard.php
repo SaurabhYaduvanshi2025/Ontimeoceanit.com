@@ -66,6 +66,7 @@ $blogCount = count(load_blogs());
                 <a class="active" href="dashboard.php">Dashboard</a>
                 <a href="leads.php">Leads</a>
                 <a href="blogs.php">Blog</a>
+                <a href="chatbot.php">Chatbot</a>
                 <a href="logout.php">Logout</a>
             </nav>
         </aside>

@@ -1,16 +1,30 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-
 <head>
+
+   <?php
+   session_start();
+
+   if (empty($_SESSION['csrf_token'])) {
+       $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+   }
+   ?>
+
+   <meta name="csrf-token"
+         content="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
+
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Ontimeoceanit - IT Service HTML Template</title>
+   <title>OntimeoceanIT - IT Service HTML Template</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!-- Place favicon.ico in the root directory -->
-   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/ontimelogo.png">
+   <link rel="shortcut icon"
+         type="image/x-icon"
+         href="assets/imgs/logo/ontimelogo.png">
+
    <!-- CSS here -->
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
@@ -22,6 +36,8 @@
    <link rel="stylesheet" href="assets/css/icomoon.css">
    <link rel="stylesheet" href="assets/css/spacing.css">
    <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="chatbot/chat.css">
+
 </head>
 
 <body>
@@ -41,15 +57,20 @@
          </div>
       </div>
    </div>
-   <!-- preloader start -->
+   <!-- preloader end -->
+
 
    <!-- Back to top start -->
    <div class="backtotop-wrap cursor-pointer">
-      <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      <svg class="backtotop-circle svg-content"
+           width="100%"
+           height="100%"
+           viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0,0,1 0,98 a49,49 0,0,1 0,-98" />
       </svg>
    </div>
    <!-- Back to top end -->
+
 
    <!-- search area start -->
    <div class="df-search-area">
@@ -57,14 +78,19 @@
          <div class="row">
             <div class="col-xl-12">
                <div class="df-search-form">
+
                   <div class="df-search-close text-center mb-20">
-                     <button class="df-search-close-btn df-search-close-btn"></button>
+                     <button class="df-search-close-btn"></button>
                   </div>
+
                   <form action="#">
                      <div class="df-search-input mb-10">
                         <input type="text" placeholder="Search here...">
-                        <button type="submit"><i class="icon-search"></i></button>
+                        <button type="submit">
+                           <i class="icon-search"></i>
+                        </button>
                      </div>
+
                      <div class="df-search-category">
                         <span>Search by : </span>
                         <a href="#">Modified Wotech, </a>
@@ -73,99 +99,122 @@
                         <a href="#">Wotech Renovation </a>
                      </div>
                   </form>
+
                </div>
             </div>
          </div>
       </div>
    </div>
+
    <div class="body-overlay"></div>
    <!-- search area end -->
 
+
    <!-- Offcanvas area start -->
    <div class="fix">
+
       <div class="offcanvas__info">
+
          <div class="offcanvas__wrapper">
+
             <div class="offcanvas__content">
+
                <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
+
                   <div class="offcanvas__logo">
                      <a href="dashboard.html">
-                        <img src="assets/imgs/logo/ontimelogo.png" alt="Header Logo">
+                        <img src="assets/imgs/logo/ontimelogo.png"
+                             alt="Header Logo">
                      </a>
                   </div>
+
                   <div class="offcanvas__close">
                      <button>
                         <i class="fal fa-times"></i>
                      </button>
                   </div>
+
                </div>
+
                <div class="mobile-menu fix mb-40"></div>
+
             </div>
+
          </div>
+
       </div>
+
    </div>
+
    <div class="offcanvas__overlay"></div>
    <div class="offcanvas__overlay-white"></div>
-   <!-- Offcanvas area start -->
+   <!-- Offcanvas area end -->
+
 
    <!-- Header area start -->
    <?php include 'includes/header.php'; ?>
-   <!-- Header area end --> 
+   <!-- Header area end -->
 
 
- <main>
-   
- <!-- Banner area start --> 
-    <?php include 'includes/banner.php'; ?>
+   <main>
 
- <!-- Banner area end --> 
-
- <!-- Features area start --> 
-  <?php include 'includes/features.php'; ?>
- <!-- Features area end --> 
-
- <!-- about two area start --> 
- <?php include  'includes/about.php'; ?>
- <!-- about two area end --> 
-
- <!-- Service tab area start --> 
-  <?php include 'includes/service.php'; ?>
- <!-- Service tab area end --> 
-
- <!-- Work process area start --> 
-   <?php include 'includes/workprocess.php'; ?>
- <!-- Work process area end --> 
-
- <!-- Text slider area start --> 
-  <?php include 'includes/textslider.php'; ?>
- <!-- Text slider area end --> 
-
- <!-- Project slider two area start --> 
- <?php include 'includes/projectslider.php'; ?>
- <!-- Project slider two area end --> 
- 
-  <!-- Testimonials area start --> 
-   <?php include 'includes/testimonials.php'; ?>
-  <!-- Testimonials area end --> 
-
- <!-- Icon box counter area start --> 
-  <?php include 'includes/iconbox.php'; ?>
- <!-- Icon box counter area end --> 
+      <!-- Banner area start -->
+      <?php include 'includes/banner.php'; ?>
+      <!-- Banner area end -->
 
 
- <!-- Blog area start --> 
- <!-- Blog area end --> 
+      <!-- Features area start -->
+      <?php include 'includes/features.php'; ?>
+      <!-- Features area end -->
 
 
+      <!-- About area start -->
+      <?php include 'includes/about.php'; ?>
+      <!-- About area end -->
 
- </main>
-     
+
+      <!-- Service area start -->
+      <?php include 'includes/service.php'; ?>
+      <!-- Service area end -->
+
+
+      <!-- Work process area start -->
+      <?php include 'includes/workprocess.php'; ?>
+      <!-- Work process area end -->
+
+
+      <!-- Text slider area start -->
+      <?php include 'includes/textslider.php'; ?>
+      <!-- Text slider area end -->
+
+
+      <!-- Project slider area start -->
+      <?php include 'includes/projectslider.php'; ?>
+      <!-- Project slider area end -->
+
+
+      <!-- Testimonials area start -->
+      <?php include 'includes/testimonials.php'; ?>
+      <!-- Testimonials area end -->
+
+
+      <!-- Icon box counter area start -->
+      <?php include 'includes/iconbox.php'; ?>
+      <!-- Icon box counter area end -->
+
+   </main>
+
+
+   <!-- Chatbot -->
+   <?php include 'chatbot/chatbot.php'; ?>
+
+   <script src="/chatbot/chat.js"></script>
+
 
    <!-- Footer area start -->
    <?php include 'includes/footer.php'; ?>
    <!-- Footer area end -->
-   
 
 </body>
-
 
 </html>
