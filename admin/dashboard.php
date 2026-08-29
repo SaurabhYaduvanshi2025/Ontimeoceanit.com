@@ -16,6 +16,40 @@ foreach ($leads as $lead) {
 $recentLeads = array_slice($leads, 0, 5);
 $blogCount = count(load_blogs());
 ?>
+
+$stmt = $pdo->query("
+    SELECT COUNT(DISTINCT visitor_id)
+    FROM visitor_logs
+    WHERE DATE(visited_at) = CURDATE()
+");
+
+$todayVisitors = (int) $stmt->fetchColumn();
+
+
+$stmt = $pdo->query("
+    SELECT COUNT(DISTINCT visitor_id)
+    FROM visitor_logs
+    WHERE visited_at >= NOW() - INTERVAL 7 DAY
+");
+
+$weekVisitors = (int) $stmt->fetchColumn();
+
+
+$stmt = $pdo->query("
+    SELECT COUNT(DISTINCT visitor_id)
+    FROM visitor_logs
+    WHERE visited_at >= NOW() - INTERVAL 30 DAY
+");
+
+$monthVisitors = (int) $stmt->fetchColumn();
+
+
+$stmt = $pdo->query("
+    SELECT COUNT(DISTINCT visitor_id)
+    FROM visitor_logs
+");
+
+$totalVisitors = (int) $stmt->fetchColumn();
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,6 +101,7 @@ $blogCount = count(load_blogs());
                 <a href="leads.php">Leads</a>
                 <a href="blogs.php">Blog</a>
                 <a href="chatbot.php">Chatbot</a>
+                <a href="visitors.php">Visitors</a>
                 <a href="logout.php">Logout</a>
             </nav>
         </aside>
@@ -101,6 +136,25 @@ $blogCount = count(load_blogs());
                         <p><a href="blogs.php" style="font-size:16px; color:#2563eb; text-decoration:none;">Create Blog</a></p>
                     </div>
                 </div>
+                <div class="stat-card">
+    <h3>Today Visitors</h3>
+    <p><?= $todayVisitors ?></p>
+</div>
+
+<div class="stat-card">
+    <h3>This Week</h3>
+    <p><?= $weekVisitors ?></p>
+</div>
+
+<div class="stat-card">
+    <h3>This Month</h3>
+    <p><?= $monthVisitors ?></p>
+</div>
+
+<div class="stat-card">
+    <h3>Total Visitors</h3>
+    <p><?= $totalVisitors ?></p>
+</div>
 
                 <div class="card">
                     <div class="section-head">
