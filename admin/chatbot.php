@@ -323,10 +323,75 @@ if ($selectedSessionId > 0) {
 
                         <?php foreach ($sessions as $session): ?>
 
-                            <a
-                                class="conversation <?= $selectedSessionId === (int) $session['id'] ? 'active' : '' ?>"
-                                href="?session_id=<?= (int) $session['id'] ?>"
-                            >
+                        
+                              <div class="conversation <?= $selectedSessionId === (int) $session['id'] ? 'active' : '' ?>">
+
+    <a
+        href="?session_id=<?= (int) $session['id'] ?>"
+        style="text-decoration:none; color:inherit; display:block;"
+    >
+
+        <strong>
+            Conversation #<?= (int) $session['id'] ?>
+        </strong>
+
+        <small>
+            <?= htmlspecialchars(
+                $session['user_email'] ?: 'Visitor',
+                ENT_QUOTES,
+                'UTF-8'
+            ) ?>
+        </small>
+
+        <br>
+
+        <small>
+            Messages:
+            <?= (int) $session['message_count'] ?>
+        </small>
+
+        <br>
+
+        <small>
+            <?= htmlspecialchars(
+                $session['updated_at'],
+                ENT_QUOTES,
+                'UTF-8'
+            ) ?>
+        </small>
+
+    </a>
+
+    <form
+        method="POST"
+        action="delete-chat.php"
+        onsubmit="return confirm('Are you sure you want to delete this conversation?');"
+        style="margin-top:10px;"
+    >
+
+        <input
+            type="hidden"
+            name="session_id"
+            value="<?= (int) $session['id'] ?>"
+        >
+
+        <button
+            type="submit"
+            style="
+                background:#dc2626;
+                color:white;
+                border:0;
+                padding:8px 12px;
+                border-radius:6px;
+                cursor:pointer;
+            "
+        >
+            🗑 Delete
+        </button>
+
+    </form>
+
+</div>
 
                                 <strong>
                                     Conversation #<?= (int) $session['id'] ?>
