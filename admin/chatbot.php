@@ -442,7 +442,7 @@ if ($selectedSessionId > 0) {
                         <h2>Select a conversation</h2>
 
                         <p class="empty">
-                            Left side se kisi conversation par click karo.
+                            Click on left side for chat
                         </p>
 
                     <?php else: ?>
