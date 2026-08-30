@@ -15,7 +15,7 @@ foreach ($leads as $lead) {
 }
 $recentLeads = array_slice($leads, 0, 5);
 $blogCount = count(load_blogs());
-?>
+
 
 $stmt = $pdo->query("
     SELECT COUNT(DISTINCT visitor_id)
@@ -25,7 +25,6 @@ $stmt = $pdo->query("
 
 $todayVisitors = (int) $stmt->fetchColumn();
 
-
 $stmt = $pdo->query("
     SELECT COUNT(DISTINCT visitor_id)
     FROM visitor_logs
@@ -33,7 +32,6 @@ $stmt = $pdo->query("
 ");
 
 $weekVisitors = (int) $stmt->fetchColumn();
-
 
 $stmt = $pdo->query("
     SELECT COUNT(DISTINCT visitor_id)
@@ -43,13 +41,17 @@ $stmt = $pdo->query("
 
 $monthVisitors = (int) $stmt->fetchColumn();
 
-
 $stmt = $pdo->query("
     SELECT COUNT(DISTINCT visitor_id)
     FROM visitor_logs
 ");
 
 $totalVisitors = (int) $stmt->fetchColumn();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
