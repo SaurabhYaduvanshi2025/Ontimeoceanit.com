@@ -54,46 +54,210 @@ $totalVisitors = (int) $stmt->fetchColumn();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <style>
-        * { box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f4f7fb; margin: 0; color: #111827; }
-        .app { display: flex; min-height: 100vh; }
-        .sidebar { width: 260px; background: #111827; color: #fff; padding: 24px 16px; display: flex; flex-direction: column; gap: 16px; }
-        .brand { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
-        .sidebar a { color: #e5e7eb; text-decoration: none; padding: 12px 14px; border-radius: 8px; display: block; margin-bottom: 6px; }
-        .sidebar a.active, .sidebar a:hover { background: #1f2937; color: #fff; }
-        .main { flex: 1; display: flex; flex-direction: column; }
-        .topbar { background: #fff; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e5e7eb; }
-        .menu-btn { display: none; border: 0; background: #111827; color: #fff; padding: 10px 12px; border-radius: 8px; cursor: pointer; }
-        .content { padding: 24px; }
-        .card { background: #fff; border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,.06); padding: 24px; margin-bottom: 20px; }
-        .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
-        .stat-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,.06); }
-        .stat-card h3 { margin: 0 0 8px; font-size: 16px; color: #6b7280; }
-        .stat-card p { margin: 0; font-size: 24px; font-weight: 700; }
-        .section-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
-        .btn { display: inline-block; padding: 10px 16px; background: #111827; color: #fff; text-decoration: none; border-radius: 8px; }
-        .btn.secondary { background: #2563eb; }
-        table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; vertical-align: top; }
-        th { background: #f9fafb; }
-        .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; background: #dbeafe; color: #1d4ed8; }
-        .empty { color: #6b7280; padding: 20px 0; }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            color: #111827;
+        }
+
+        .app {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #111827;
+            color: #fff;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: #e5e7eb;
+            text-decoration: none;
+            padding: 12px 14px;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .sidebar a.active,
+        .sidebar a:hover {
+            background: #1f2937;
+            color: #fff;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar {
+            background: #fff;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: #111827;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+        }
+
+        .stat-card h3 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: #6b7280;
+        }
+
+        .stat-card p {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #111827;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .btn.secondary {
+            background: #2563eb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        th,
+        td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f9fafb;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .empty {
+            color: #6b7280;
+            padding: 20px 0;
+        }
+
         @media (max-width: 768px) {
-            .app { flex-direction: column; }
-            .sidebar { width: 100%; display: none; }
-            .sidebar.open { display: block; }
-            .menu-btn { display: inline-block; }
-            .content { padding: 16px; }
-            .stats { grid-template-columns: 1fr; }
-            table { display: block; overflow-x: auto; }
+            .app {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                display: none;
+            }
+
+            .sidebar.open {
+                display: block;
+            }
+
+            .menu-btn {
+                display: inline-block;
+            }
+
+            .content {
+                padding: 16px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="app">
         <aside class="sidebar" id="sidebar">
@@ -135,28 +299,29 @@ $totalVisitors = (int) $stmt->fetchColumn();
                     </div>
                     <div class="stat-card">
                         <h3>Quick Action</h3>
-                        <p><a href="blogs.php" style="font-size:16px; color:#2563eb; text-decoration:none;">Create Blog</a></p>
+                        <p><a href="blogs.php" style="font-size:16px; color:#2563eb; text-decoration:none;">Create
+                                Blog</a></p>
                     </div>
                 </div>
                 <div class="stat-card">
-    <h3>Today Visitors</h3>
-    <p><?= $todayVisitors ?></p>
-</div>
+                    <h3>Today Visitors</h3>
+                    <p><?= $todayVisitors ?></p>
+                </div>
 
-<div class="stat-card">
-    <h3>This Week</h3>
-    <p><?= $weekVisitors ?></p>
-</div>
+                <div class="stat-card">
+                    <h3>This Week</h3>
+                    <p><?= $weekVisitors ?></p>
+                </div>
 
-<div class="stat-card">
-    <h3>This Month</h3>
-    <p><?= $monthVisitors ?></p>
-</div>
+                <div class="stat-card">
+                    <h3>This Month</h3>
+                    <p><?= $monthVisitors ?></p>
+                </div>
 
-<div class="stat-card">
-    <h3>Total Visitors</h3>
-    <p><?= $totalVisitors ?></p>
-</div>
+                <div class="stat-card">
+                    <h3>Total Visitors</h3>
+                    <p><?= $totalVisitors ?></p>
+                </div>
 
                 <div class="card">
                     <div class="section-head">
@@ -184,7 +349,9 @@ $totalVisitors = (int) $stmt->fetchColumn();
                                         <td><?= htmlspecialchars($lead['name'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
                                         <td><?= htmlspecialchars($lead['email'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
                                         <td><?= htmlspecialchars($lead['subject'] ?? '-', ENT_QUOTES, 'UTF-8') ?></td>
-                                        <td><span class="badge"><?= htmlspecialchars(strtoupper($lead['status'] ?? 'NEW'), ENT_QUOTES, 'UTF-8') ?></span></td>
+                                        <td><span
+                                                class="badge"><?= htmlspecialchars(strtoupper($lead['status'] ?? 'NEW'), ENT_QUOTES, 'UTF-8') ?></span>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -205,4 +372,5 @@ $totalVisitors = (int) $stmt->fetchColumn();
         }
     </script>
 </body>
+
 </html>

@@ -105,13 +105,26 @@
 	/*======================================
 	Sidebar Toggle
 	========================================*/
-	$(".offcanvas__close,.offcanvas__overlay").on("click", function () {
+	function closeOffcanvasMenu() {
 		$(".offcanvas__info").removeClass("info-open");
 		$(".offcanvas__overlay").removeClass("overlay-open");
-	});
-	$(".sidebar__toggle").on("click", function () {
+		$(".bar-icon").attr("aria-expanded", "false");
+	}
+
+	// Delegate the handlers so the mobile control keeps working when a page
+	// template inserts or rebuilds the header/menu.
+	$(document).on("click", ".sidebar__toggle, .offcanvas-open-btn", function (event) {
+		event.preventDefault();
 		$(".offcanvas__info").addClass("info-open");
 		$(".offcanvas__overlay").addClass("overlay-open");
+		$(".bar-icon").attr("aria-expanded", "true");
+	});
+	$(document).on("click", ".offcanvas__close, .offcanvas__overlay", closeOffcanvasMenu);
+	$(document).on("click", ".offcanvas__info .mean-nav a:not(.mean-expand)", closeOffcanvasMenu);
+	$(document).on("keydown", function (event) {
+		if (event.key === "Escape") {
+			closeOffcanvasMenu();
+		}
 	});
 
 	/*======================================

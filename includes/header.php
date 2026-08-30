@@ -107,7 +107,7 @@
                      </div>
                      <div class="header__hamburger d-xl-none my-auto">
                         <div class="sidebar__toggle">
-                           <a class="bar-icon" href="javascript:void(0)">
+                           <a class="bar-icon" href="#" aria-label="Open navigation menu" aria-controls="mobile-navigation" aria-expanded="false">
                               <i class="fa-light fa-bars-sort"></i>
                            </a>
                         </div>

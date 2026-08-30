@@ -1036,6 +1036,29 @@ ob_start();
 include 'includes/footer.php';
 $footer = ob_get_clean();
 
+$mobileMenu = <<<'HTML'
+   <div class="fix">
+      <div class="offcanvas__info" id="mobile-navigation">
+         <div class="offcanvas__wrapper">
+            <div class="offcanvas__content">
+               <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
+                  <div class="offcanvas__logo">
+                     <a href="index.php">
+                        <img src="assets/imgs/logo/ontimelogo.png" alt="Ontime Ocean IT">
+                     </a>
+                  </div>
+                  <div class="offcanvas__close">
+                     <button type="button" aria-label="Close navigation menu"><i class="fal fa-times"></i></button>
+                  </div>
+               </div>
+               <div class="mobile-menu fix mb-40"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="offcanvas__overlay"></div>
+HTML;
+
 echo <<<HTML
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -1073,6 +1096,7 @@ echo <<<HTML
       </div>
    </div>
 
+   {$mobileMenu}
    {$header}
 
    <main>

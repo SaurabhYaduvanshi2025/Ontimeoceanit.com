@@ -136,6 +136,7 @@ $csrfToken = generate_admin_csrf_token();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -164,7 +165,7 @@ $csrfToken = generate_admin_csrf_token();
             background: #fff;
             border-radius: 12px;
             padding: 24px;
-            box-shadow: 0 10px 24px rgba(0,0,0,.06);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
         }
 
         h1 {
@@ -236,137 +237,102 @@ $csrfToken = generate_admin_csrf_token();
 
 <body>
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    <a class="back" href="blogs.php">
-        ← Back to Blog Manager
-    </a>
+        <a class="back" href="blogs.php">
+            ← Back to Blog Manager
+        </a>
 
-    <div class="card">
+        <div class="card">
 
-        <h1>Edit Blog</h1>
+            <h1>Edit Blog</h1>
 
-        <?php if ($message !== ''): ?>
-            <div class="message success">
-                <?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($errors)): ?>
-            <div class="message error">
-                <ul>
-                    <?php foreach ($errors as $error): ?>
-                        <li>
-                            <?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
-
-        <form method="post" enctype="multipart/form-data">
-
-            <input
-                type="hidden"
-                name="csrf_token"
-                value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8') ?>"
-            >
-
-            <label for="title">Title</label>
-
-            <input
-                type="text"
-                id="title"
-                name="title"
-                value="<?= htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8') ?>"
-                required
-            >
-
-            <label for="slug">Slug</label>
-
-            <input
-                type="text"
-                id="slug"
-                name="slug"
-                value="<?= htmlspecialchars($blog['slug'], ENT_QUOTES, 'UTF-8') ?>"
-            >
-
-            <label for="meta_title">Meta Title</label>
-
-            <input
-                type="text"
-                id="meta_title"
-                name="meta_title"
-                value="<?= htmlspecialchars($blog['meta_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
-            >
-
-            <label for="meta_description">Meta Description</label>
-
-            <textarea
-                id="meta_description"
-                name="meta_description"
-            ><?= htmlspecialchars($blog['meta_description'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
-
-            <label for="status">Status</label>
-
-            <select id="status" name="status">
-                <option
-                    value="published"
-                    <?= $blog['status'] === 'published' ? 'selected' : '' ?>
-                >
-                    Published
-                </option>
-
-                <option
-                    value="draft"
-                    <?= $blog['status'] === 'draft' ? 'selected' : '' ?>
-                >
-                    Draft
-                </option>
-            </select>
-
-            <label>Current Image</label>
-
-            <?php if (!empty($blog['image'])): ?>
-
-                <img
-                    class="current-image"
-                    src="<?= htmlspecialchars($blog['image'], ENT_QUOTES, 'UTF-8') ?>"
-                    alt="<?= htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8') ?>"
-                >
-
-            <?php else: ?>
-
-                <p>No image uploaded.</p>
-
+            <?php if ($message !== ''): ?>
+                <div class="message success">
+                    <?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?>
+                </div>
             <?php endif; ?>
 
-            <label for="image">Replace Image (optional)</label>
+            <?php if (!empty($errors)): ?>
+                <div class="message error">
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                            <li>
+                                <?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
 
-            <input
-                type="file"
-                id="image"
-                name="image"
-                accept="image/*"
-            >
+            <form method="post" enctype="multipart/form-data">
 
-            <label for="content">Content</label>
+                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8') ?>">
 
-            <textarea
-                id="content"
-                name="content"
-                required
-            ><?= htmlspecialchars($blog['content'], ENT_QUOTES, 'UTF-8') ?></textarea>
+                <label for="title">Title</label>
 
-            <button type="submit">
-                Update Blog
-            </button>
+                <input type="text" id="title" name="title"
+                    value="<?= htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8') ?>" required>
 
-        </form>
+                <label for="slug">Slug</label>
+
+                <input type="text" id="slug" name="slug"
+                    value="<?= htmlspecialchars($blog['slug'], ENT_QUOTES, 'UTF-8') ?>">
+
+                <label for="meta_title">Meta Title</label>
+
+                <input type="text" id="meta_title" name="meta_title"
+                    value="<?= htmlspecialchars($blog['meta_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+
+                <label for="meta_description">Meta Description</label>
+
+                <textarea id="meta_description"
+                    name="meta_description"><?= htmlspecialchars($blog['meta_description'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+
+                <label for="status">Status</label>
+
+                <select id="status" name="status">
+                    <option value="published" <?= $blog['status'] === 'published' ? 'selected' : '' ?>>
+                        Published
+                    </option>
+
+                    <option value="draft" <?= $blog['status'] === 'draft' ? 'selected' : '' ?>>
+                        Draft
+                    </option>
+                </select>
+
+                <label>Current Image</label>
+
+                <?php if (!empty($blog['image'])): ?>
+
+                    <img class="current-image" src="<?= htmlspecialchars($blog['image'], ENT_QUOTES, 'UTF-8') ?>"
+                        alt="<?= htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8') ?>">
+
+                <?php else: ?>
+
+                    <p>No image uploaded.</p>
+
+                <?php endif; ?>
+
+                <label for="image">Replace Image (optional)</label>
+
+                <input type="file" id="image" name="image" accept="image/*">
+
+                <label for="content">Content</label>
+
+                <textarea id="content" name="content"
+                    required><?= htmlspecialchars($blog['content'], ENT_QUOTES, 'UTF-8') ?></textarea>
+
+                <button type="submit">
+                    Update Blog
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 
-</div>
-
 </body>
+
 </html>

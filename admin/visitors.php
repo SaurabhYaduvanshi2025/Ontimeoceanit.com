@@ -137,16 +137,12 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Visitors</title>
 
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -209,7 +205,7 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 24px rgba(0,0,0,.06);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
         }
 
         .stat {
@@ -289,7 +285,6 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
             background: #111827;
             color: #fff;
         }
-
     </style>
 
 </head>
@@ -298,322 +293,294 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
 
-<div class="app">
+    <div class="app">
 
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <div class="brand">
-            Admin Panel
-        </div>
-
-        <nav>
-
-            <a href="dashboard.php">
-                Dashboard
-            </a>
-
-            <a href="leads.php">
-                Leads
-            </a>
-
-            <a
-                href="visitors.php"
-                class="active"
-            >
-                Visitors
-            </a>
-
-            <a href="blogs.php">
-                Blog
-            </a>
-
-            <a href="logout.php">
-                Logout
-            </a>
-
-        </nav>
-
-    </aside>
-
-
-    <!-- MAIN -->
-
-    <div class="main">
-
-
-        <!-- TOPBAR -->
-
-        <header class="topbar">
-
-            Welcome,
-            <?= htmlspecialchars(
-                $_SESSION['admin_username'] ?? 'Admin',
-                ENT_QUOTES,
-                'UTF-8'
-            ) ?>
-
-        </header>
-
-
-        <!-- CONTENT -->
-
-        <div class="content">
-
-
-            <!-- TOTAL VISITORS -->
-
-            <div class="card">
-
-                <h1>
-                    Website Visitors
-                </h1>
-
-                <p>
-                    Total Unique Visitors
-                </p>
-
-                <div class="stat">
-                    <?= $totalVisitors ?>
-                </div>
-
+            <div class="brand">
+                Admin Panel
             </div>
 
+            <nav>
 
-            <!-- VISITOR TABLE -->
+                <a href="dashboard.php">
+                    Dashboard
+                </a>
 
-            <div class="card">
+                <a href="leads.php">
+                    Leads
+                </a>
 
-                <h2>
-                    Visitor Details
-                </h2>
+                <a href="visitors.php" class="active">
+                    Visitors
+                </a>
+
+                <a href="blogs.php">
+                    Blog
+                </a>
+
+                <a href="logout.php">
+                    Logout
+                </a>
+
+            </nav>
+
+        </aside>
 
 
-                <!-- FILTER -->
+        <!-- MAIN -->
 
-                <form
-                    method="GET"
-                    class="filter-form"
-                >
+        <div class="main">
 
-                    <input
-                        type="text"
-                        name="search"
-                        placeholder="Search IP, Visitor ID..."
-                        value="<?= htmlspecialchars(
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                Welcome,
+                <?= htmlspecialchars(
+                    $_SESSION['admin_username'] ?? 'Admin',
+                    ENT_QUOTES,
+                    'UTF-8'
+                ) ?>
+
+            </header>
+
+
+            <!-- CONTENT -->
+
+            <div class="content">
+
+
+                <!-- TOTAL VISITORS -->
+
+                <div class="card">
+
+                    <h1>
+                        Website Visitors
+                    </h1>
+
+                    <p>
+                        Total Unique Visitors
+                    </p>
+
+                    <div class="stat">
+                        <?= $totalVisitors ?>
+                    </div>
+
+                </div>
+
+
+                <!-- VISITOR TABLE -->
+
+                <div class="card">
+
+                    <h2>
+                        Visitor Details
+                    </h2>
+
+
+                    <!-- FILTER -->
+
+                    <form method="GET" class="filter-form">
+
+                        <input type="text" name="search" placeholder="Search IP, Visitor ID..." value="<?= htmlspecialchars(
                             $search,
                             ENT_QUOTES,
                             'UTF-8'
-                        ) ?>"
-                    >
+                        ) ?>">
 
 
-                    <select name="period">
+                        <select name="period">
 
-                        <option
-                            value="all"
-                            <?= $period === 'all'
+                            <option value="all" <?= $period === 'all'
                                 ? 'selected'
-                                : '' ?>
-                        >
-                            All
-                        </option>
+                                : '' ?>>
+                                All
+                            </option>
 
-                        <option
-                            value="today"
-                            <?= $period === 'today'
+                            <option value="today" <?= $period === 'today'
                                 ? 'selected'
-                                : '' ?>
-                        >
-                            Today
-                        </option>
+                                : '' ?>>
+                                Today
+                            </option>
 
-                        <option
-                            value="week"
-                            <?= $period === 'week'
+                            <option value="week" <?= $period === 'week'
                                 ? 'selected'
-                                : '' ?>
-                        >
-                            Last 7 Days
-                        </option>
+                                : '' ?>>
+                                Last 7 Days
+                            </option>
 
-                        <option
-                            value="month"
-                            <?= $period === 'month'
+                            <option value="month" <?= $period === 'month'
                                 ? 'selected'
-                                : '' ?>
-                        >
-                            Last 30 Days
-                        </option>
+                                : '' ?>>
+                                Last 30 Days
+                            </option>
 
-                    </select>
-
-
-                    <button type="submit">
-                        Search
-                    </button>
+                        </select>
 
 
-                    <a
-                        href="visitors.php"
-                        class="reset-btn"
-                    >
-                        Reset
-                    </a>
-
-                </form>
+                        <button type="submit">
+                            Search
+                        </button>
 
 
-                <!-- TABLE -->
+                        <a href="visitors.php" class="reset-btn">
+                            Reset
+                        </a>
 
-                <div class="table-wrapper">
-
-                    <table>
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    Visitor ID
-                                </th>
-
-                                <th>
-                                    IP Address
-                                </th>
-
-                                <th>
-                                    User Agent
-                                </th>
-
-                                <th>
-                                    Total Visits
-                                </th>
-
-                                <th>
-                                    Last Visit
-                                </th>
-
-                            </tr>
-
-                        </thead>
+                    </form>
 
 
-                        <tbody>
+                    <!-- TABLE -->
 
+                    <div class="table-wrapper">
 
-                        <?php if (empty($visitors)): ?>
+                        <table>
 
-                            <tr>
-
-                                <td colspan="5">
-                                    No visitors found.
-                                </td>
-
-                            </tr>
-
-
-                        <?php else: ?>
-
-
-                            <?php foreach ($visitors as $visitor): ?>
+                            <thead>
 
                                 <tr>
 
-                                    <td>
-                                        <?= htmlspecialchars(
-                                            $visitor['visitor_id'],
-                                            ENT_QUOTES,
-                                            'UTF-8'
-                                        ) ?>
-                                    </td>
+                                    <th>
+                                        Visitor ID
+                                    </th>
 
+                                    <th>
+                                        IP Address
+                                    </th>
 
-                                    <td>
-                                        <?= htmlspecialchars(
-                                            $visitor['ip_address'] ?? '-',
-                                            ENT_QUOTES,
-                                            'UTF-8'
-                                        ) ?>
-                                    </td>
+                                    <th>
+                                        User Agent
+                                    </th>
 
+                                    <th>
+                                        Total Visits
+                                    </th>
 
-                                    <td>
-                                        <?= htmlspecialchars(
-                                            $visitor['user_agent'] ?? '-',
-                                            ENT_QUOTES,
-                                            'UTF-8'
-                                        ) ?>
-                                    </td>
-
-
-                                    <td>
-                                        <?= (int)
-                                            $visitor['total_visits'] ?>
-                                    </td>
-
-
-                                    <td>
-                                        <?= htmlspecialchars(
-                                            $visitor['last_visit'],
-                                            ENT_QUOTES,
-                                            'UTF-8'
-                                        ) ?>
-                                    </td>
+                                    <th>
+                                        Last Visit
+                                    </th>
 
                                 </tr>
 
-                            <?php endforeach; ?>
+                            </thead>
 
+
+                            <tbody>
+
+
+                                <?php if (empty($visitors)): ?>
+
+                                    <tr>
+
+                                        <td colspan="5">
+                                            No visitors found.
+                                        </td>
+
+                                    </tr>
+
+
+                                <?php else: ?>
+
+
+                                    <?php foreach ($visitors as $visitor): ?>
+
+                                        <tr>
+
+                                            <td>
+                                                <?= htmlspecialchars(
+                                                    $visitor['visitor_id'],
+                                                    ENT_QUOTES,
+                                                    'UTF-8'
+                                                ) ?>
+                                            </td>
+
+
+                                            <td>
+                                                <?= htmlspecialchars(
+                                                    $visitor['ip_address'] ?? '-',
+                                                    ENT_QUOTES,
+                                                    'UTF-8'
+                                                ) ?>
+                                            </td>
+
+
+                                            <td>
+                                                <?= htmlspecialchars(
+                                                    $visitor['user_agent'] ?? '-',
+                                                    ENT_QUOTES,
+                                                    'UTF-8'
+                                                ) ?>
+                                            </td>
+
+
+                                            <td>
+                                                <?= (int) 
+                                                    $visitor['total_visits'] ?>
+                                            </td>
+
+
+                                            <td>
+                                                <?= htmlspecialchars(
+                                                    $visitor['last_visit'],
+                                                    ENT_QUOTES,
+                                                    'UTF-8'
+                                                ) ?>
+                                            </td>
+
+                                        </tr>
+
+                                    <?php endforeach; ?>
+
+
+                                <?php endif; ?>
+
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- PAGINATION -->
+
+                        <?php if ($totalPages > 1): ?>
+
+                            <div class="pagination">
+
+                                <?php for (
+                                    $i = 1;
+                                    $i <= $totalPages;
+                                    $i++
+                                ): ?>
+
+                                    <a href="?page=<?= $i ?>&period=<?= urlencode($period) ?>&search=<?= urlencode($search) ?>"
+                                        class="<?= $i === $page
+                                            ? 'active'
+                                            : '' ?>">
+                                        <?= $i ?>
+                                    </a>
+
+                                <?php endfor; ?>
+
+                            </div>
 
                         <?php endif; ?>
 
 
-                        </tbody>
-
-                    </table>
-
-
-                    <!-- PAGINATION -->
-
-                    <?php if ($totalPages > 1): ?>
-
-                        <div class="pagination">
-
-                            <?php for (
-                                $i = 1;
-                                $i <= $totalPages;
-                                $i++
-                            ): ?>
-
-                                <a
-                                    href="?page=<?= $i ?>&period=<?= urlencode($period) ?>&search=<?= urlencode($search) ?>"
-                                    class="<?= $i === $page
-                                        ? 'active'
-                                        : '' ?>"
-                                >
-                                    <?= $i ?>
-                                </a>
-
-                            <?php endfor; ?>
-
-                        </div>
-
-                    <?php endif; ?>
-
+                    </div>
 
                 </div>
 
-            </div>
 
+            </div>
 
         </div>
 
     </div>
-
-</div>
 
 
 </body>

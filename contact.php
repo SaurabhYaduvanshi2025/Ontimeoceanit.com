@@ -237,13 +237,13 @@ $message
 
    <!-- Offcanvas area start -->
    <div class="fix">
-      <div class="offcanvas__info">
+      <div class="offcanvas__info" id="mobile-navigation">
          <div class="offcanvas__wrapper">
             <div class="offcanvas__content">
                <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
                   <div class="offcanvas__logo">
-                     <a href="dashboard.html">
-                        <img src="assets/imgs/logo/logo-white.svg" alt="Header Logo">
+                     <a href="index.php">
+                        <img src="assets/imgs/logo/ontimelogo.png" alt="Ontime Ocean IT">
                      </a>
                   </div>
                   <div class="offcanvas__close">

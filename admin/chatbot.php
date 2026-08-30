@@ -85,13 +85,11 @@ if ($selectedSessionId > 0) {
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Chatbot - Admin Panel</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -158,7 +156,7 @@ if ($selectedSessionId > 0) {
         .card {
             background: #fff;
             border-radius: 12px;
-            box-shadow: 0 10px 24px rgba(0,0,0,.06);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
             padding: 20px;
         }
 
@@ -231,167 +229,157 @@ if ($selectedSessionId > 0) {
             }
 
         }
-
     </style>
 
 </head>
 
 <body>
 
-<div class="app">
+    <div class="app">
 
 
-    <!-- ========================================
+        <!-- ========================================
          SIDEBAR
     ========================================= -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <div class="brand">
-            Admin Panel
-        </div>
+            <div class="brand">
+                Admin Panel
+            </div>
 
-        <nav>
+            <nav>
 
-            <a href="dashboard.php">
-                Dashboard
-            </a>
+                <a href="dashboard.php">
+                    Dashboard
+                </a>
 
-            <a href="leads.php">
-                Leads
-            </a>
+                <a href="leads.php">
+                    Leads
+                </a>
 
-            <a href="blogs.php">
-                Blog
-            </a>
+                <a href="blogs.php">
+                    Blog
+                </a>
 
-            <a href="chatbot.php" class="active">
-                Chatbot
-            </a>
+                <a href="chatbot.php" class="active">
+                    Chatbot
+                </a>
 
-            <a href="logout.php">
-                Logout
-            </a>
-
-        </nav>
-
-    </aside>
+                <a href="visitors.php">Visitors</a>
 
 
-    <!-- ========================================
+                <a href="logout.php">
+                    Logout
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ========================================
          MAIN
     ========================================= -->
 
-    <div class="main">
+        <div class="main">
 
 
-        <header class="topbar">
+            <header class="topbar">
 
-            Welcome,
-            <?= htmlspecialchars(
-                $_SESSION['admin_username'] ?? 'Admin',
-                ENT_QUOTES,
-                'UTF-8'
-            ) ?>
+                Welcome,
+                <?= htmlspecialchars(
+                    $_SESSION['admin_username'] ?? 'Admin',
+                    ENT_QUOTES,
+                    'UTF-8'
+                ) ?>
 
-        </header>
-
-
-        <div class="content">
-
-            <h1>Chatbot Conversations</h1>
+            </header>
 
 
-            <div class="layout">
+            <div class="content">
+
+                <h1>Chatbot Conversations</h1>
 
 
-                <!-- ========================================
+                <div class="layout">
+
+
+                    <!-- ========================================
                      CONVERSATION LIST
                 ========================================= -->
 
-                <div class="card">
+                    <div class="card">
 
-                    <h2>All Conversations</h2>
+                        <h2>All Conversations</h2>
 
-                    <?php if (empty($sessions)): ?>
+                        <?php if (empty($sessions)): ?>
 
-                        <div class="empty">
-                            No chatbot conversations yet.
-                        </div>
+                            <div class="empty">
+                                No chatbot conversations yet.
+                            </div>
 
-                    <?php else: ?>
+                        <?php else: ?>
 
-                        <?php foreach ($sessions as $session): ?>
+                            <?php foreach ($sessions as $session): ?>
 
-                        
-                              <div class="conversation <?= $selectedSessionId === (int) $session['id'] ? 'active' : '' ?>">
 
-    <a
-        href="?session_id=<?= (int) $session['id'] ?>"
-        style="text-decoration:none; color:inherit; display:block;"
-    >
+                                <div class="conversation <?= $selectedSessionId === (int) $session['id'] ? 'active' : '' ?>">
 
-        <strong>
-            Conversation #<?= (int) $session['id'] ?>
-        </strong>
+                                    <a href="?session_id=<?= (int) $session['id'] ?>"
+                                        style="text-decoration:none; color:inherit; display:block;">
 
-        <small>
-            <?= htmlspecialchars(
-                $session['user_email'] ?: 'Visitor',
-                ENT_QUOTES,
-                'UTF-8'
-            ) ?>
-        </small>
+                                        <strong>
+                                            Conversation #<?= (int) $session['id'] ?>
+                                        </strong>
 
-        <br>
+                                        <small>
+                                            <?= htmlspecialchars(
+                                                $session['user_email'] ?: 'Visitor',
+                                                ENT_QUOTES,
+                                                'UTF-8'
+                                            ) ?>
+                                        </small>
 
-        <small>
-            Messages:
-            <?= (int) $session['message_count'] ?>
-        </small>
+                                        <br>
 
-        <br>
+                                        <small>
+                                            Messages:
+                                            <?= (int) $session['message_count'] ?>
+                                        </small>
 
-        <small>
-            <?= htmlspecialchars(
-                $session['updated_at'],
-                ENT_QUOTES,
-                'UTF-8'
-            ) ?>
-        </small>
+                                        <br>
 
-    </a>
+                                        <small>
+                                            <?= htmlspecialchars(
+                                                $session['updated_at'],
+                                                ENT_QUOTES,
+                                                'UTF-8'
+                                            ) ?>
+                                        </small>
 
-    <form
-        method="POST"
-        action="delete-chat.php"
-        onsubmit="return confirm('Are you sure you want to delete this conversation?');"
-        style="margin-top:10px;"
-    >
+                                    </a>
 
-        <input
-            type="hidden"
-            name="session_id"
-            value="<?= (int) $session['id'] ?>"
-        >
+                                    <form method="POST" action="delete-chat.php"
+                                        onsubmit="return confirm('Are you sure you want to delete this conversation?');"
+                                        style="margin-top:10px;">
 
-        <button
-            type="submit"
-            style="
+                                        <input type="hidden" name="session_id" value="<?= (int) $session['id'] ?>">
+
+                                        <button type="submit" style="
                 background:#dc2626;
                 color:white;
                 border:0;
                 padding:8px 12px;
                 border-radius:6px;
                 cursor:pointer;
-            "
-        >
-            🗑 Delete
-        </button>
+            ">
+                                            🗑 Delete
+                                        </button>
 
-    </form>
+                                    </form>
 
-</div>
+                                </div>
 
                                 <strong>
                                     Conversation #<?= (int) $session['id'] ?>
@@ -422,82 +410,84 @@ if ($selectedSessionId > 0) {
                                     ) ?>
                                 </small>
 
-                            </a>
-
-                        <?php endforeach; ?>
-
-                    <?php endif; ?>
-
-                </div>
-
-
-                <!-- ========================================
-                     CHAT DETAILS
-                ========================================= -->
-
-                <div class="card">
-
-                    <?php if (!$selectedSession): ?>
-
-                        <h2>Select a conversation</h2>
-
-                        <p class="empty">
-                            Click on left side for chat
-                        </p>
-
-                    <?php else: ?>
-
-                        <h2>
-                            Conversation #<?= (int) $selectedSession['id'] ?>
-                        </h2>
-
-
-                        <?php if (empty($messages)): ?>
-
-                            <div class="empty">
-                                No messages found.
-                            </div>
-
-                        <?php else: ?>
-
-                            <?php foreach ($messages as $message): ?>
-
-                                <div class="message <?= $message['sender'] === 'user' ? 'user' : 'bot' ?>">
-
-                                    <div class="sender">
-
-                                        <?= $message['sender'] === 'user'
-                                            ? '👤 User'
-                                            : '🤖 OntimeoceanIT Assistant'
-                                        ?>
-
-                                    </div>
-
-                                    <div>
-                                        <?= nl2br(
-                                            htmlspecialchars(
-                                                $message['message'],
-                                                ENT_QUOTES,
-                                                'UTF-8'
-                                            )
-                                        ) ?>
-                                    </div>
-
-                                    <div class="time">
-                                        <?= htmlspecialchars(
-                                            $message['created_at'],
-                                            ENT_QUOTES,
-                                            'UTF-8'
-                                        ) ?>
-                                    </div>
-
-                                </div>
+                                </a>
 
                             <?php endforeach; ?>
 
                         <?php endif; ?>
 
-                    <?php endif; ?>
+                    </div>
+
+
+                    <!-- ========================================
+                     CHAT DETAILS
+                ========================================= -->
+
+                    <div class="card">
+
+                        <?php if (!$selectedSession): ?>
+
+                            <h2>Select a conversation</h2>
+
+                            <p class="empty">
+                                Click on left side for chat
+                            </p>
+
+                        <?php else: ?>
+
+                            <h2>
+                                Conversation #<?= (int) $selectedSession['id'] ?>
+                            </h2>
+
+
+                            <?php if (empty($messages)): ?>
+
+                                <div class="empty">
+                                    No messages found.
+                                </div>
+
+                            <?php else: ?>
+
+                                <?php foreach ($messages as $message): ?>
+
+                                    <div class="message <?= $message['sender'] === 'user' ? 'user' : 'bot' ?>">
+
+                                        <div class="sender">
+
+                                            <?= $message['sender'] === 'user'
+                                                ? '👤 User'
+                                                : '🤖 OntimeoceanIT Assistant'
+                                                ?>
+
+                                        </div>
+
+                                        <div>
+                                            <?= nl2br(
+                                                htmlspecialchars(
+                                                    $message['message'],
+                                                    ENT_QUOTES,
+                                                    'UTF-8'
+                                                )
+                                            ) ?>
+                                        </div>
+
+                                        <div class="time">
+                                            <?= htmlspecialchars(
+                                                $message['created_at'],
+                                                ENT_QUOTES,
+                                                'UTF-8'
+                                            ) ?>
+                                        </div>
+
+                                    </div>
+
+                                <?php endforeach; ?>
+
+                            <?php endif; ?>
+
+                        <?php endif; ?>
+
+                    </div>
 
                 </div>
 
@@ -507,7 +497,6 @@ if ($selectedSessionId > 0) {
 
     </div>
 
-</div>
-
 </body>
+
 </html>
