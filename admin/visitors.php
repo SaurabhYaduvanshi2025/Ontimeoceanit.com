@@ -15,6 +15,29 @@ require_once __DIR__ . '/../config/database.php';
 
 $period = $_GET['period'] ?? 'all';
 $search = trim($_GET['search'] ?? '');
+$msg = trim((string) ($_GET['msg'] ?? ''));
+$error = trim((string) ($_GET['error'] ?? ''));
+
+$successMessage = '';
+if ($msg === 'deleted') {
+    $successMessage = 'Visitor history deleted successfully.';
+} elseif ($msg === 'cleared') {
+    $successMessage = 'All visitor history has been deleted successfully.';
+}
+
+$errorMessage = '';
+if ($error === 'invalid_token') {
+    $errorMessage = 'Security validation failed (invalid CSRF token). Please try again.';
+} elseif ($error === 'invalid_id') {
+    $errorMessage = 'Invalid visitor identifier provided.';
+} elseif ($error === 'invalid_action') {
+    $errorMessage = 'Invalid action requested.';
+} elseif ($error === 'db_error') {
+    $errorMessage = 'A database error occurred while deleting visitor history.';
+}
+
+$csrfToken = generate_admin_csrf_token();
+
 
 $where = [];
 $params = [];
@@ -75,7 +98,7 @@ $page = max(
 
 
 // ==================================================
-// TOTAL UNIQUE VISITORS
+// TOTAL UNIQUE VISITORS & PAGINATION
 // ==================================================
 
 $countStmt = $pdo->prepare("
@@ -92,9 +115,23 @@ $countStmt->execute($params);
 
 $totalVisitors = (int) $countStmt->fetchColumn();
 
+// Table total rows for accurate pagination
+$rowCountStmt = $pdo->prepare("
+    SELECT COUNT(*)
+    FROM (
+        SELECT 1
+        FROM visitor_logs
+        $whereSQL
+        GROUP BY visitor_id, ip_address, user_agent
+    ) AS grouped_rows
+");
+
+$rowCountStmt->execute($params);
+$totalRows = (int) $rowCountStmt->fetchColumn();
+
 $totalPages = max(
     1,
-    (int) ceil($totalVisitors / $perPage)
+    (int) ceil($totalRows / $perPage)
 );
 
 
@@ -285,6 +322,116 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
             background: #111827;
             color: #fff;
         }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .card-header h2 {
+            margin: 0;
+        }
+
+        .btn-delete {
+            background: #dc2626;
+            color: #ffffff;
+            border: 0;
+            padding: 7px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background 0.15s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .btn-delete:hover {
+            background: #b91c1c;
+        }
+
+        .btn-delete-all {
+            background: #dc2626;
+            color: #ffffff;
+            border: 0;
+            padding: 9px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.15s ease-in-out;
+        }
+
+        .btn-delete-all:hover {
+            background: #b91c1c;
+        }
+
+        .alert {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .alert-success {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+        }
+
+        .alert-danger {
+            background: #fee2e2;
+            color: #b91c1c;
+            border: 1px solid #fca5a5;
+        }
+
+        .alert-close {
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: inherit;
+            cursor: pointer;
+            padding: 0 4px;
+            margin-left: 12px;
+            line-height: 1;
+        }
+
+        .visitor-id-cell {
+            max-width: 180px;
+            word-break: break-all;
+        }
+
+        .visitor-id-cell code {
+            font-family: monospace;
+            font-size: 12px;
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .user-agent-cell {
+            max-width: 250px;
+            word-break: break-word;
+            font-size: 12px;
+            color: #4b5563;
+        }
+
+        .text-center {
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -314,12 +461,16 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     Leads
                 </a>
 
-                <a href="visitors.php" class="active">
-                    Visitors
-                </a>
-
                 <a href="blogs.php">
                     Blog
+                </a>
+
+                <a href="chatbot.php">
+                    Chatbot
+                </a>
+
+                <a href="visitors.php" class="active">
+                    Visitors
                 </a>
 
                 <a href="logout.php">
@@ -354,6 +505,20 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="content">
 
+                <?php if ($successMessage !== ''): ?>
+                    <div class="alert alert-success">
+                        <span><?= htmlspecialchars($successMessage, ENT_QUOTES, 'UTF-8') ?></span>
+                        <button type="button" class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($errorMessage !== ''): ?>
+                    <div class="alert alert-danger">
+                        <span><?= htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8') ?></span>
+                        <button type="button" class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
+                    </div>
+                <?php endif; ?>
+
 
                 <!-- TOTAL VISITORS -->
 
@@ -378,9 +543,24 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="card">
 
-                    <h2>
-                        Visitor Details
-                    </h2>
+                    <div class="card-header">
+                        <h2>
+                            Visitor Details
+                        </h2>
+
+                        <?php if (!empty($visitors)): ?>
+                            <form method="POST" action="delete-visitor.php"
+                                onsubmit="return confirm('Are you sure you want to permanently delete ALL visitor history? This action cannot be undone.');"
+                                style="margin: 0;">
+                                <input type="hidden" name="csrf_token"
+                                    value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8') ?>">
+                                <input type="hidden" name="action" value="delete_all">
+                                <button type="submit" class="btn-delete-all" title="Delete all visitor tracking history">
+                                    🗑 Delete All History
+                                </button>
+                            </form>
+                        <?php endif; ?>
+                    </div>
 
 
                     <!-- FILTER -->
@@ -465,6 +645,10 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         Last Visit
                                     </th>
 
+                                    <th style="width: 110px; text-align: center;">
+                                        Action
+                                    </th>
+
                                 </tr>
 
                             </thead>
@@ -477,7 +661,7 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                                     <tr>
 
-                                        <td colspan="5">
+                                        <td colspan="6" style="text-align: center; color: #6b7280; padding: 24px;">
                                             No visitors found.
                                         </td>
 
@@ -491,12 +675,12 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                                         <tr>
 
-                                            <td>
-                                                <?= htmlspecialchars(
+                                            <td class="visitor-id-cell">
+                                                <code><?= htmlspecialchars(
                                                     $visitor['visitor_id'],
                                                     ENT_QUOTES,
                                                     'UTF-8'
-                                                ) ?>
+                                                ) ?></code>
                                             </td>
 
 
@@ -509,7 +693,7 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </td>
 
 
-                                            <td>
+                                            <td class="user-agent-cell">
                                                 <?= htmlspecialchars(
                                                     $visitor['user_agent'] ?? '-',
                                                     ENT_QUOTES,
@@ -530,6 +714,27 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                     ENT_QUOTES,
                                                     'UTF-8'
                                                 ) ?>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <form method="POST" action="delete-visitor.php"
+                                                    onsubmit="return confirm('Are you sure you want to delete this visitor\'s history?');"
+                                                    style="margin: 0; display: inline-block;">
+                                                    <input type="hidden" name="csrf_token"
+                                                        value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8') ?>">
+                                                    <input type="hidden" name="action" value="delete_single">
+                                                    <input type="hidden" name="visitor_id"
+                                                        value="<?= htmlspecialchars($visitor['visitor_id'], ENT_QUOTES, 'UTF-8') ?>">
+                                                    <input type="hidden" name="period"
+                                                        value="<?= htmlspecialchars($period, ENT_QUOTES, 'UTF-8') ?>">
+                                                    <input type="hidden" name="search"
+                                                        value="<?= htmlspecialchars($search, ENT_QUOTES, 'UTF-8') ?>">
+                                                    <input type="hidden" name="page"
+                                                        value="<?= (int) $page ?>">
+                                                    <button type="submit" class="btn-delete" title="Delete this visitor's history">
+                                                        🗑 Delete
+                                                    </button>
+                                                </form>
                                             </td>
 
                                         </tr>
