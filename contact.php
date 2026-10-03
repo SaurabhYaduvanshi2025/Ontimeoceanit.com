@@ -321,7 +321,7 @@ $message
                   </div>
                   <div class="info">
                      <span>Make A quote</span>
-                     <h4><a href="mailto:Info@wotech.com">Info@wotech.com</a></h4>
+                     <h4><a href="mailto:technicalms321@gmail.com">technicalms321@gmail.com</a></h4>
                   </div>
                </div>
             </div>
