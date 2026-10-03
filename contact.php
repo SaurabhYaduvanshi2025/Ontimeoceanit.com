@@ -7,7 +7,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Load .env file
-// Try using vlucas/phpdotenv if it's available, otherwise parse .env manually
 if (class_exists(\Dotenv\Dotenv::class)) {
    $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
    $dotenv->load();
@@ -58,101 +57,108 @@ $contact_message_type = ''; // 'success', 'danger', 'warning', etc.
 
 if (isset($_POST['submit'])) {
 
-    $name = trim($_POST['name']);
-    $email = trim($_POST['email']);
-    $phone = trim($_POST['phone']);
-    $subject = trim($_POST['subject']);
-    $message = trim($_POST['message']);
+    // 1. HONEYPOT CHECK (Agar bot ne hidden field bhari toh silently drop kar do)
+    if (!empty($_POST['extra_website_check'])) {
+        $contact_message = 'Spam detected. Submission blocked.';
+        $contact_message_type = 'danger';
+    } else {
+        $name = trim($_POST['name'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $phone = preg_replace('/[^0-9]/', '', $_POST['phone'] ?? ''); // Clean digits only
+        $subject = trim($_POST['subject'] ?? '');
+        $message = trim($_POST['message'] ?? '');
 
-    save_lead([
-        'name' => $name,
-        'email' => $email,
-        'phone' => $phone,
-        'subject' => $subject,
-        'message' => $message,
-        'status' => 'new'
-    ]);
+        // 2. SERVER-SIDE VALIDATIONS
+        $validation_error = '';
 
-    $mailHost = get_mail_config_value('MAIL_HOST');
-    $mailUsername = get_mail_config_value('MAIL_USERNAME');
-    $mailPassword = get_mail_config_value('MAIL_PASSWORD');
-    $mailPort = (int) get_mail_config_value('MAIL_PORT', '587');
-    $mailFrom = get_mail_config_value('MAIL_FROM', $mailUsername);
-    $mailFromName = get_mail_config_value('MAIL_FROM_NAME', 'Website Contact');
+        if (empty($name) || strlen($name) < 2 || !preg_match("/^[a-zA-Z\s.'-]+$/", $name)) {
+            $validation_error = 'Please enter a valid full name.';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $validation_error = 'Please enter a valid email address.';
+        } elseif (!preg_match('/^[6-9][0-9]{9}$/', $phone)) {
+            $validation_error = 'Please enter a valid 10-digit mobile number.';
+        } elseif (empty($subject) || strlen($subject) < 3) {
+            $validation_error = 'Please enter a valid subject.';
+        } elseif (empty($message) || strlen($message) < 5) {
+            $validation_error = 'Please enter a detailed message.';
+        } elseif (preg_match('/(http:\/\/|https:\/\/|<a\s|\[url\]|www\.)/i', $message)) {
+            // Links block karne ke liye (Spam bots mostly message mein links bhejte hain)
+            $validation_error = 'Links and URLs are not allowed in the message.';
+        }
 
-   $mailEnabled = true;
-   if ($mailHost === '' || $mailUsername === '' || $mailPassword === '' || is_placeholder_mail_value($mailHost) || is_placeholder_mail_value($mailUsername) || is_placeholder_mail_value($mailPassword) || $mailPort <= 0) {
-      $contact_message = 'Thank you! Your request was saved, but email delivery is not enabled because the SMTP credentials are not configured correctly. Please update the mail settings in the .env file.';
-      $contact_message_type = 'warning';
-      $mailEnabled = false;
-   }
+        if (!empty($validation_error)) {
+            $contact_message = $validation_error;
+            $contact_message_type = 'danger';
+        } else {
+            // Save lead only after passing all validations
+            save_lead([
+                'name' => $name,
+                'email' => $email,
+                'phone' => $phone,
+                'subject' => $subject,
+                'message' => $message,
+                'status' => 'new'
+            ]);
 
-    $mail = new PHPMailer(true);
+            $mailHost = get_mail_config_value('MAIL_HOST');
+            $mailUsername = get_mail_config_value('MAIL_USERNAME');
+            $mailPassword = get_mail_config_value('MAIL_PASSWORD');
+            $mailPort = (int) get_mail_config_value('MAIL_PORT', '587');
+            $mailFrom = get_mail_config_value('MAIL_FROM', $mailUsername);
+            $mailFromName = get_mail_config_value('MAIL_FROM_NAME', 'Website Contact');
 
-   try {
-        $mail->isSMTP();
-        $mail->Host = $mailHost;
-        $mail->SMTPAuth = true;
-        $mail->Username = $mailUsername;
-        $mail->Password = $mailPassword;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = $mailPort;
+            $mailEnabled = true;
+            if ($mailHost === '' || $mailUsername === '' || $mailPassword === '' || is_placeholder_mail_value($mailHost) || is_placeholder_mail_value($mailUsername) || is_placeholder_mail_value($mailPassword) || $mailPort <= 0) {
+                $contact_message = 'Thank you! Your request was saved, but email delivery is not enabled because the SMTP credentials are not configured correctly.';
+                $contact_message_type = 'warning';
+                $mailEnabled = false;
+            }
 
+            $mail = new PHPMailer(true);
 
+            try {
+                $mail->isSMTP();
+                $mail->Host = $mailHost;
+                $mail->SMTPAuth = true;
+                $mail->Username = $mailUsername;
+                $mail->Password = $mailPassword;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = $mailPort;
 
-        $mail->setFrom($mailFrom, $mailFromName);
-        $mail->addAddress($mailUsername);
-        $mail->addReplyTo($email, $name);
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body = "
+                $mail->setFrom($mailFrom, $mailFromName);
+                $mail->addAddress($mailUsername);
+                $mail->addReplyTo($email, $name);
+                $mail->isHTML(true);
+                $mail->Subject = htmlspecialchars($subject);
+                $mail->Body = "
 <h2>New Contact Form Submission</h2>
-
-<p><strong>Name:</strong> {$name}</p>
-
-<p><strong>Email:</strong> {$email}</p>
-
-<p><strong>Phone:</strong> {$phone}</p>
-
-<p><strong>Subject:</strong> {$subject}</p>
-
-<p><strong>Message:</strong><br>{$message}</p>
+<p><strong>Name:</strong> " . htmlspecialchars($name) . "</p>
+<p><strong>Email:</strong> " . htmlspecialchars($email) . "</p>
+<p><strong>Phone:</strong> " . htmlspecialchars($phone) . "</p>
+<p><strong>Subject:</strong> " . htmlspecialchars($subject) . "</p>
+<p><strong>Message:</strong><br>" . nl2br(htmlspecialchars($message)) . "</p>
 ";
-        $mail->AltBody = "
-Name: $name
+                $mail->AltBody = "Name: $name\nEmail: $email\nPhone: $phone\nSubject: $subject\nMessage:\n$message";
 
-Email: $email
-
-Phone: $phone
-
-Subject: $subject
-
-Message:
-$message
-";
-
-      if ($mailEnabled) {
-         $mail->send();
-         $contact_message = 'Email sent successfully!';
-         $contact_message_type = 'success';
-      }
-    } catch (Exception $e) {
-        error_log('Contact form mail failed: ' . $e->getMessage());
-      if ($contact_message === '') {
-         $contact_message = 'Your request was saved, but the email could not be sent. Please verify your SMTP credentials, especially your Gmail app password.';
-         $contact_message_type = 'danger';
-      }
+                if ($mailEnabled) {
+                    $mail->send();
+                    $contact_message = 'Thank you! Your message has been sent successfully.';
+                    $contact_message_type = 'success';
+                }
+            } catch (Exception $e) {
+                error_log('Contact form mail failed: ' . $e->getMessage());
+                if ($contact_message === '') {
+                    $contact_message = 'Your request was saved, but the email could not be sent. Please check SMTP settings.';
+                    $contact_message_type = 'danger';
+                }
+            }
+        }
     }
-
 }
-
 ?>
-
-
 
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 
 <head>
    <meta charset="utf-8">
@@ -160,8 +166,6 @@ $message
    <title>Ontimeoceanit - IT Service HTML Template</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   <!-- Place favicon.ico in the root directory -->
 
    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/ontimelogo.png">
 
@@ -180,7 +184,6 @@ $message
 
 <body>
 
-   <!-- preloader start -->
    <div id="preloader">
       <div class="bd-loader-inner">
          <div class="bd-loader">
@@ -195,17 +198,13 @@ $message
          </div>
       </div>
    </div>
-   <!-- preloader start -->
 
-   <!-- Back to top start -->
    <div class="backtotop-wrap cursor-pointer">
       <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
       </svg>
    </div>
-   <!-- Back to top end -->
 
-   <!-- search area start -->
    <div class="df-search-area">
       <div class="container">
          <div class="row">
@@ -233,9 +232,7 @@ $message
       </div>
    </div>
    <div class="body-overlay"></div>
-   <!-- search area end -->
 
-   <!-- Offcanvas area start -->
    <div class="fix">
       <div class="offcanvas__info" id="mobile-navigation">
          <div class="offcanvas__wrapper">
@@ -259,16 +256,11 @@ $message
    </div>
    <div class="offcanvas__overlay"></div>
    <div class="offcanvas__overlay-white"></div>
-   <!-- Offcanvas area start -->
 
-   <!-- Header area start -->
    <?php include 'includes/header.php'; ?>
-   <!-- Header area end --> 
-
 
  <main>
    
- <!-- Breadcrumb area start --> 
 <div class="breadcrumb__area theme-bg-1 p-relative pt-160 pb-160">
    <div class="breadcrumb__thumb" data-background="assets/imgs/resources/page-title-bg-1.png"></div>
    <div class="breadcrumb__thumb_2" data-background="assets/imgs/resources/page-title-bg-2.png"></div>
@@ -290,7 +282,6 @@ $message
       </div>
    </div>
 </div>
- <!-- Breadcrumb area end --> 
 
  <section class="contact-page-section section-space">
    <div class="small-container">
@@ -316,14 +307,18 @@ $message
                   </div>
                </div>
                <div class="contact-box">
-                  <div class="icon-1">
-                     <i class="fat fa-envelope"></i>
-                  </div>
-                  <div class="info">
-                     <span>Make A quote</span>
-                     <h4><a href="mailto:technicalms321@gmail.com">technicalms321@gmail.com</a></h4>
-                  </div>
-               </div>
+   <div class="icon-1">
+      <i class="fat fa-envelope"></i>
+   </div>
+   <div class="info">
+      <span>Make A quote</span>
+      <h4>
+         <a href="mailto:technicalms321@gmail.com" style="display: block; width: 90%; min-width: 250px; word-break: break-word;">
+            technicalms321@gmail.com
+         </a>
+      </h4>
+   </div>
+</div>
             </div>
          </div>
          <div class="col-xxl-8 col-xl-8 col-lg-8">
@@ -333,86 +328,98 @@ $message
                   <h3 class="section-title mt-10">Let’s Get in Touch</h3>
                </div>
                <div class="contact-page-form">
-                     <div class="contact-page-form">
-    <form action="" method="POST">
+                  <form action="" method="POST" autocomplete="on">
 
-        <div class="row">
+                     <!-- HONEYPOT TRAP: Bots will fill this, real users won't see it -->
+                     <div style="display:none !important; visibility:hidden; opacity:0; position:absolute; left:-9999px;">
+                        <label for="extra_website_check">Leave this field blank</label>
+                        <input type="text" name="extra_website_check" id="extra_website_check" tabindex="-1" autocomplete="off">
+                     </div>
 
-            <div class="col-lg-6">
-                <label for="name">Your Name <span>*</span></label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-control"
-                    placeholder="Enter Your Name"
-                    required>
-            </div>
+                     <div class="row">
 
-            <div class="col-lg-6">
-                <label for="email">Your Email <span>*</span></label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Enter Your Email"
-                    required>
-            </div>
+                        <div class="col-lg-6">
+                            <label for="name">Your Name <span>*</span></label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-control"
+                                placeholder="Enter Your Name"
+                                pattern="[a-zA-Z\s.'-]{2,50}"
+                                title="Please enter a valid name (letters only)"
+                                required>
+                        </div>
 
-            <div class="col-lg-6">
-                <label for="phone">Phone Number <span>*</span></label>
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    class="form-control"
-                    placeholder="Enter Your Phone Number"
-                    required>
-            </div>
+                        <div class="col-lg-6">
+                            <label for="email">Your Email <span>*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Enter Your Email"
+                                required>
+                        </div>
 
-            <div class="col-lg-6">
-                <label for="subject">Subject <span>*</span></label>
-                <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    class="form-control"
-                    placeholder="Enter Subject"
-                    required>
-            </div>
+                        <div class="col-lg-6">
+                            <label for="phone">Phone Number <span>*</span></label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="form-control"
+                                placeholder="10-digit Mobile Number"
+                                pattern="[6-9][0-9]{9}"
+                                maxlength="10"
+                                title="Enter valid 10-digit Indian phone number starting with 6, 7, 8, or 9"
+                                required>
+                        </div>
 
-            <div class="col-lg-12">
-                <label for="message">Your Message <span>*</span></label>
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    class="form-control"
-                    placeholder="Write your message here..."
-                    required></textarea>
-            </div>
+                        <div class="col-lg-6">
+                            <label for="subject">Subject <span>*</span></label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                class="form-control"
+                                placeholder="Enter Subject"
+                                minlength="3"
+                                maxlength="100"
+                                required>
+                        </div>
 
-            <?php if (!empty($contact_message)): ?>
-            <div class="col-lg-12 mt-2">
-               <div class="alert alert-<?php echo htmlspecialchars($contact_message_type ?: 'info'); ?> alert-dismissible fade show" role="alert" style="border-radius:12px;">
-                  <?php echo htmlspecialchars($contact_message); ?>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div class="col-lg-12">
+                            <label for="message">Your Message <span>*</span></label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                class="form-control"
+                                placeholder="Write your message here..."
+                                minlength="5"
+                                required></textarea>
+                        </div>
+
+                        <?php if (!empty($contact_message)): ?>
+                        <div class="col-lg-12 mt-2">
+                           <div class="alert alert-<?php echo htmlspecialchars($contact_message_type ?: 'info'); ?> alert-dismissible fade show" role="alert" style="border-radius:12px;">
+                              <?php echo htmlspecialchars($contact_message); ?>
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                           </div>
+                        </div>
+                        <?php endif; ?>
+
+                        <div class="col-lg-12 mt-3">
+                           <button type="submit" name="submit" class="primary-btn-1 btn-hover">
+                              Send Message &nbsp; | <i class="icon-right-arrow"></i>
+                           </button>
+                        </div>
+
+                     </div>
+
+                  </form>
                </div>
-            </div>
-            <?php endif; ?>
-
-            <div class="col-lg-12 mt-3">
-               <button type="submit" name="submit" class="primary-btn-1 btn-hover">
-                  Send Message &nbsp; | <i class="icon-right-arrow"></i>
-               </button>
-            </div>
-
-        </div>
-
-    </form>
-</div>
-            </div>
             </div>
          </div>
       </div>
@@ -427,17 +434,11 @@ $message
          </div>
       </div>
    </div>
-</div>
-
+ </div>
 
  </main>     
 
-   <!-- Footer area start -->
    <?php include 'includes/footer.php'; ?>
-   <!-- Footer area end -->
-   
 
 </body>
-
-
 </html>
